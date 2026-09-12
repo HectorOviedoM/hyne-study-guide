@@ -2,8 +2,6 @@
   "use strict";
 
   var search = document.getElementById("site-search");
-  if (!search) return;
-
   var path = (window.location.pathname || "").toLowerCase();
   var file = path.split("/").pop() || "index.html";
   if (file === "" || file === "/") file = "index.html";
@@ -75,7 +73,6 @@
       var text = normalize(block.map(function (el) { return el.textContent; }).join(" "));
       var match = text.indexOf(q) !== -1 || normalize(h.textContent).indexOf(q) !== -1;
       h.classList.toggle("hidden-heading", !match);
-      // Also dim non-matching sibling content lightly via opacity on following until next heading
       var sib = h.nextElementSibling;
       while (sib && sib.tagName !== "H2" && !(h.tagName === "H3" && sib.tagName === "H3") && sib.tagName !== "H2") {
         if (sib.tagName === "H2" || (h.tagName === "H3" && sib.tagName === "H3")) break;
@@ -85,33 +82,65 @@
       }
     });
 
-    // Also filter TOC
     tocLinks.forEach(function (link) {
       var id = link.getAttribute("href").slice(1);
       var el = document.getElementById(id);
       if (!el) return;
-      var show = !q || normalize(el.textContent).indexOf(q) !== -1 ||
-        (el.parentElement && normalize(el.parentElement.textContent).indexOf(q) !== -1);
-      // Simpler: match link text + heading text
-      show = !q || normalize(link.textContent + " " + (el.textContent || "")).indexOf(q) !== -1;
+      var show = !q || normalize(link.textContent + " " + (el.textContent || "")).indexOf(q) !== -1;
       link.parentElement.style.display = show ? "" : "none";
     });
   }
 
   var isHub = !!document.querySelector(".chapter-grid");
 
-  search.addEventListener("input", function () {
-    var q = normalize(search.value);
-    if (isHub) filterHub(q);
-    else filterChapter(q);
-  });
+  if (search) {
+    search.addEventListener("input", function () {
+      var q = normalize(search.value);
+      if (isHub) filterHub(q);
+      else filterChapter(q);
+    });
 
-  // Clear filter display when emptied
-  search.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      search.value = "";
-      search.dispatchEvent(new Event("input"));
-      search.blur();
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        search.value = "";
+        search.dispatchEvent(new Event("input"));
+        search.blur();
+      }
+    });
+  }
+
+  // Interactive hotspot pins on figures
+  function activatePin(wrap, pin) {
+    var pins = wrap.querySelectorAll(".pin");
+    var panel = wrap.parentElement && wrap.parentElement.querySelector(".hotspot-panel");
+    if (!panel) {
+      // panel may be sibling after wrap inside figure
+      var fig = wrap.closest("figure");
+      panel = fig ? fig.querySelector(".hotspot-panel") : null;
     }
+    pins.forEach(function (p) {
+      p.classList.toggle("is-active", p === pin);
+      p.setAttribute("aria-pressed", p === pin ? "true" : "false");
+    });
+    if (panel) {
+      var title = panel.querySelector(".hotspot-title");
+      var body = panel.querySelector(".hotspot-body");
+      if (title) title.textContent = pin.getAttribute("data-title") || "";
+      if (body) body.textContent = pin.getAttribute("data-body") || "";
+      panel.hidden = false;
+    }
+  }
+
+  document.querySelectorAll(".hotspot").forEach(function (wrap) {
+    var pins = wrap.querySelectorAll(".pin");
+    if (!pins.length) return;
+    pins.forEach(function (pin) {
+      pin.setAttribute("aria-pressed", "false");
+      pin.addEventListener("click", function () {
+        activatePin(wrap, pin);
+      });
+    });
+    var pre = wrap.querySelector(".pin.is-active") || pins[0];
+    activatePin(wrap, pre);
   });
 })();
