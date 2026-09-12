@@ -394,29 +394,39 @@ a:hover { color: var(--teal-dark); }
   margin: 0 0 0.35rem;
 }
 
-/* Figures / SVG */
+/* Figures — photos & published diagrams */
 .figure {
   margin: 1.5rem 0;
-  padding: 1rem;
+  padding: 0.75rem 0.75rem 1rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  overflow-x: auto;
+  overflow: hidden;
 }
-.figure svg {
+.figure img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+  border-radius: calc(var(--radius) - 2px);
+  background: #ebe4d6;
 }
 .figure figcaption {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--ink-muted);
   margin-top: 0.75rem;
-  text-align: center;
-  line-height: 1.4;
+  text-align: left;
+  line-height: 1.45;
+  padding: 0 0.25rem;
+}
+.figure figcaption .src {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
 }
 
 /* Tables */
