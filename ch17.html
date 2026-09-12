@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 17 Drilling Techniques — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#vert">Vertical wells</a></li>
+  <li><a href="#dir">Directional drilling</a></li>
+  <li><a href="#kick">How we steer</a></li>
+  <li><a href="#survey">Surveys & MWD</a></li>
+  <li><a href="#why-dev">Why deviate</a></li>
+  <li><a href="#horiz">Horizontal wells</a></li>
+  <li><a href="#depth">MD vs TVD</a></li>
+  <li><a href="#air">Air & foam</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Chapter 17 — Drilling Techniques</h1>
+<p class="why-matters" id="why">Vertical is only one geometry. Directional and horizontal wells hit offshore targets from one platform, thread thin pays, and create the laterals that frac. Separating MD from TVD—and planned deviation from a crooked accident—is non-negotiable for data work.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Define straight-hole contract limits vs crooked hole vs planned directional.</li>
+    <li>Explain KOP, build, sliding vs rotating, RSS, and MWD surveys.</li>
+    <li>List business reasons to deviate (including relief wells and sidetracks).</li>
+    <li>Use MD vs TVD correctly for pipe, pressure, and reservoir depth.</li>
+  </ul>
+</section>
+
+
+<figure class="figure">
+<svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Well types side view">
+  <rect width="600" height="280" fill="#fffcf7"/>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Well types (side view)</text>
+  <line x1="20" y1="50" x2="580" y2="50" stroke="#c4b8a0" stroke-width="3"/>
+  <text x="30" y="45" font-family="system-ui" font-size="9" fill="#7a7366">surface</text>
+  <!-- vertical -->
+  <line x1="80" y1="50" x2="80" y2="240" stroke="#0d5c63" stroke-width="3"/>
+  <circle cx="80" cy="50" r="5" fill="#0d5c63"/>
+  <text x="80" y="260" text-anchor="middle" font-family="system-ui" font-size="10" fill="#084248">Vertical</text>
+  <!-- directional -->
+  <path d="M200 50 L200 120 Q200 160 260 200 L300 230" fill="none" stroke="#c4922a" stroke-width="3"/>
+  <circle cx="200" cy="50" r="5" fill="#c4922a"/>
+  <text x="250" y="260" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a5a10">Directional</text>
+  <!-- horizontal -->
+  <path d="M380 50 L380 130 Q380 170 420 190 L540 190" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <circle cx="380" cy="50" r="5" fill="#2d6a4f"/>
+  <text x="420" y="185" font-family="system-ui" font-size="8" fill="#2d6a4f">heel → toe</text>
+  <text x="460" y="260" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2d6a4f">Horizontal</text>
+  <!-- sidetrack -->
+  <line x1="560" y1="50" x2="560" y2="160" stroke="#7a7366" stroke-width="2"/>
+  <path d="M560 140 Q540 160 520 200" fill="none" stroke="#8b3a2f" stroke-width="3"/>
+  <circle cx="560" cy="50" r="5" fill="#7a7366"/>
+  <text x="540" y="260" text-anchor="middle" font-family="system-ui" font-size="10" fill="#8b3a2f">Sidetrack</text>
+</svg>
+<figcaption>Figure: Vertical, planned directional, horizontal (heel–toe in the pay), and sidetrack around junk or a fish.</figcaption>
+</figure>
+
+
+<figure class="figure">
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MD vs TVD on a deviated well">
+  <rect width="480" height="320" fill="#fffcf7"/>
+  <text x="240" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">MD vs TVD</text>
+  <line x1="80" y1="50" x2="400" y2="50" stroke="#c4b8a0" stroke-width="2"/>
+  <circle cx="120" cy="50" r="6" fill="#0d5c63"/>
+  <text x="120" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#0d5c63">KB / surface</text>
+  <!-- well path -->
+  <path d="M120 50 L120 120 Q120 160 200 200 L320 260" fill="none" stroke="#0d5c63" stroke-width="3"/>
+  <!-- TVD line -->
+  <line x1="120" y1="50" x2="120" y2="260" stroke="#c4922a" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="70" y="160" font-family="system-ui" font-size="11" font-weight="700" fill="#c4922a" transform="rotate(-90 70 160)">TVD (plumb)</text>
+  <!-- MD along path -->
+  <text x="230" y="180" font-family="system-ui" font-size="11" font-weight="700" fill="#0d5c63">MD (along hole)</text>
+  <circle cx="320" cy="260" r="5" fill="#0d5c63"/>
+  <text x="340" y="265" font-family="system-ui" font-size="10" fill="#084248">TD / bit</text>
+  <!-- labels -->
+  <text x="240" y="295" text-anchor="middle" font-family="system-ui" font-size="10" fill="#4a463c">On a curve: MD &gt; TVD always. Pressures &amp; oil window → TVD. Pipe tally &amp; ROP → MD.</text>
+</svg>
+<figcaption>Figure: Measured depth follows the wellbore; true vertical depth is the plumb-line depth. Never mix them for pressure or window questions.</figcaption>
+</figure>
+
+
+<h2 id="vert">Vertical wells</h2>
+<p>A <strong>straight hole</strong> is contractual: max deviation (°/100 ft) and a cone the wellbore must stay inside. Leaving the cone breaks contract even if you hit the map target. A <strong>crooked hole</strong> wanders on its own—no plan—often when the bit hits hard dipping beds (&gt;45° dip → bit slides downdip; &lt;45° → walks updip). “Crooked hole country” is packed with such layers. Slick BHA (no stabilizers) can help stay vertical; contracts protect adjacent leases and spacing (DSU) logic.</p>
+
+<h2 id="dir">Directional drilling</h2>
+<p><strong>Deviated</strong> wells are drawn on purpose to a subsurface target cube/cylinder. <strong>KOP</strong> (kickoff point) is the MD where you leave near-vertical and start building angle. Through casing, mill a <strong>window</strong> to sidetrack. <strong>Deviation</strong> is angle from vertical at a point (0° hanging, 90° flat)—not the same as dogleg severity. <strong>Build section</strong> is where angle increases; steel pipe often tops out near ~20°/100 ft before fatigue/torque problems (fiberglass can bend tighter but is limited).</p>
+<p>Plan = build. Unwanted sharp change (&gt;~3°/100 ft) = dogleg that later sticks pipe (Ch 16).</p>
+
+<h2 id="kick">How we steer (coarse → fine)</h2>
+<ul>
+  <li><strong>Whipstock:</strong> oriented steel wedge; bit climbs the ramp for a pilot, then open. Slow, coarse—historically abused for illegal slant holes.</li>
+  <li><strong>Jet bit:</strong> soft rock only—big nozzle erodes one side without rotating; then survey and open.</li>
+  <li><strong>Steerable motor + bent sub (0.5–3°):</strong> mud motor turns the bit while pipe above can stay still.
+    <ul>
+      <li><strong>Rotating mode:</strong> whole string turns; bend averages out → hold angle, good ROP.</li>
+      <li><strong>Sliding mode:</strong> string does not rotate; bit points with the bend → build or drop. Lower ROP, more friction—slow time log is often intentional.</li>
+    </ul>
+  </li>
+  <li><strong>Rotary steerable (push-the-bit):</strong> pads push the bit off-center while the string always rotates—smoother hole, higher ROP, continuous steering.</li>
+</ul>
+
+<h2 id="survey">How the driller knows where the bit is</h2>
+
+<figure class="figure">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MWD vs LWD vs wireline">
+  <rect width="560" height="260" fill="#fffcf7"/>
+  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Where the sensors sit</text>
+  <!-- drillstring -->
+  <rect x="40" y="50" width="30" height="180" fill="#c4b8a0" stroke="#4a463c"/>
+  <text x="55" y="45" text-anchor="middle" font-family="system-ui" font-size="9" fill="#4a463c">pipe</text>
+  <rect x="40" y="150" width="30" height="40" fill="#0d5c63"/>
+  <text x="100" y="175" font-family="system-ui" font-size="10" fill="#084248">LWD tools (GR, Res, Den, Neu…)</text>
+  <rect x="40" y="195" width="30" height="25" fill="#c4922a"/>
+  <text x="100" y="212" font-family="system-ui" font-size="10" fill="#7a5a10">MWD (inc, azi, toolface, WOB…)</text>
+  <polygon points="40,230 70,230 55,250" fill="#1a1a18"/>
+  <text x="100" y="245" font-family="system-ui" font-size="10" fill="#1a1a18">bit</text>
+  <line x1="280" y1="40" x2="280" y2="250" stroke="#d4cbb8"/>
+  <!-- wireline -->
+  <line x1="360" y1="40" x2="360" y2="200" stroke="#7a7366" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="345" y="200" width="30" height="40" fill="#8b3a2f"/>
+  <text x="420" y="100" font-family="system-ui" font-size="11" font-weight="700" fill="#4a463c">Wireline</text>
+  <text x="420" y="120" font-family="system-ui" font-size="10" fill="#7a7366">After drilling (or a trip).</text>
+  <text x="420" y="140" font-family="system-ui" font-size="10" fill="#7a7366">Sonde on cable from truck.</text>
+  <text x="420" y="220" font-family="system-ui" font-size="10" fill="#8b3a2f">logging tool</text>
+  <text x="200" y="80" font-family="system-ui" font-size="10" fill="#0d5c63">While drilling → mud pulse to surface</text>
+</svg>
+<figcaption>Figure: MWD/LWD ride in the BHA while drilling; wireline tools run on cable after (or during a trip).</figcaption>
+</figure>
+
+<p><strong>MWD</strong> sensors just above the bit (gyros, magnetometers, accelerometers) send inclination and azimuth to surface—live trajectory. Compass surveys need nonmagnetic (K-Monel) collars; near casing/steel use gyros. Without good surveys, anti-collision, target hit, TVD, and “are we in pay?” are fiction.</p>
+
+<h2 id="why-dev">Why deviate (business)</h2>
+<ul>
+  <li>One platform, many targets (dozens of wells from one jacket).</li>
+  <li>Drill from beach to shallow-water field—skip offshore rig.</li>
+  <li><strong>Relief well:</strong> approach a blowing well, intercept, kill through the formation (magnetometers help find steel casing).</li>
+  <li><strong>Sidetrack</strong> around an unrecoverable fish—new wellbore, same well.</li>
+  <li>Reach several reservoirs with one hole; pad drilling (tight wellheads); <strong>extended-reach</strong> (MD inflates, TVD does not—records &gt;11 km departure in notes).</li>
+</ul>
+
+<h2 id="horiz">Horizontal wells</h2>
+<p>Not “very directional”—a well that lies down in the pay and runs along the layer. Typical profile: two builds + a tangent for BHA room. <strong>Entry point</strong> hits the target; <strong>heel</strong> starts the lateral; <strong>toe</strong> is the far end. Short/medium/long radius = how tight the turn from vertical to 90° is.</p>
+<p>Why more production: a vertical may cross 10 m of pay; a lateral may stay in 1,000 m of the same layer. In fractured chalk, a vertical hits one fracture; a horizontal strings many. Matrix perm &lt;1 md needs those fractures (and laterals are the base for shale frac). Horizontals also reduce gas/water coning by staying mid-oil column. Drilling cost may be comparable; logging and completing through the curve is harder. <strong>Motherbore</strong> + multiple <strong>laterals</strong> = one well, several horizontal wellbores.</p>
+
+<h2 id="depth">Well depth: MD vs TVD</h2>
+<ul>
+  <li><strong>MD / TD / driller’s / logged depth:</strong> tape along the pipe—every 30 ft joint adds here. Time log, ROP, “we’re at 4,200 m” on the floor = MD.</li>
+  <li><strong>TVD:</strong> plumb-line depth—always ≤ MD on a curve. No TVD sensor: integrate surveys (inc + azi).</li>
+</ul>
+<p>Use TVD for hydrostatic pressure, oil window, and “reservoir at 2,800 m vertical.” Use MD for pipe tally, KOP on logs, ROP. Mixing them on a horizontal makes the toe look thousands of meters “into” a reservoir that is only ~2,800 m TVD—a classic error.</p>
+
+<h2 id="air">Air and foam drilling</h2>
+<p><strong>Air:</strong> rotary without mud—compressor, cuttings out the blooie line, rotating head on the kelly. Higher ROP, less filtrate/skin—but no cake (hole stability), weak kick control, and air + gas = fire risk. <strong>Foam</strong> (air + soap) lifts water and cuttings when the hole weeps.</p>
+<p>Ops read: sliding = intentionally low ROP / uneven WOB; rotating/RSS = better ROP. Trajectory comes from MWD, not hook MD. A sidetrack is not the same wellbore as the fish-plugged hole.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li><code>trajectory</code> stores surveys → MD, inc, azi, TVD, dogleg.</li>
+  <li>Sidetrack / lateral = additional <code>wellbore</code> under one <code>well</code>.</li>
+  <li>MWD directional channels ≠ LWD rock-property logs (both may mud-pulse).</li>
+  <li>Never join a vertical well’s MD tops to a lateral’s MD without TVD.</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>What is the difference between a crooked hole and a directional well?</li>
+<li>What are sliding mode and rotating mode on a steerable motor?</li>
+<li>When is TVD required instead of MD?</li>
+<li>Define heel and toe on a horizontal.</li>
+<li>What is a sidetrack in wellbore terms?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Crooked = unplanned wander. Directional = planned path to a target.</li>
+<li>Sliding: pipe not rotating, motor builds/drops. Rotating: string turns, angle holds, higher ROP.</li>
+<li>Pressure, oil window, true reservoir depth, contact correlation.</li>
+<li>Heel = start of lateral in pay; toe = far end.</li>
+<li>New wellbore branched from the original (e.g., around a fish)—same well, different wellbore.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>KOP</dt><dd>Kickoff point—MD where deviation begins.</dd>
+<dt>Build / dogleg</dt><dd>Planned angle gain vs unwanted sharp bend.</dd>
+<dt>MWD</dt><dd>Measurements while drilling—direction and drilling mechanics.</dd>
+<dt>RSS</dt><dd>Rotary steerable system—steer while always rotating.</dd>
+<dt>MD / TVD</dt><dd>Along-hole depth vs vertical depth.</dd>
+<dt>Heel / toe</dt><dd>Start and end of a horizontal lateral.</dd>
+<dt>Sidetrack</dt><dd>New borehole leaving the original wellbore.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch16.html"><span class="label">Previous</span>Ch 16 · Drilling Problems</a><a class="next" href="ch18.html"><span class="label">Next</span>Ch 18 · Testing a Well</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
