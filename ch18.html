@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 18 Testing a Well — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#sample">Sample & core</a></li>
+  <li><a href="#dtime">Drilling-time log</a></li>
+  <li><a href="#mud">Mud log</a></li>
+  <li><a href="#wl">Wireline overview</a></li>
+  <li><a href="#elec">Electrical / induction</a></li>
+  <li><a href="#gr">Gamma ray</a></li>
+  <li><a href="#radio">Neutron & density</a></li>
+  <li><a href="#gasfx">Gas effect</a></li>
+  <li><a href="#other">Caliper, sonic, others</a></li>
+  <li><a href="#mwd">MWD / LWD</a></li>
+  <li><a href="#dst">DST</a></li>
+  <li><a href="#rft">RFT / WFT</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Chapter 18 — Testing a Well</h1>
+<p class="why-matters" id="why">Completing a well often costs more than drilling it. After the hole is cut, logs and tests decide whether pay is worth steel, cement, and stimulation. This chapter is the toolkit: cuttings to wireline families to DST—and how those objects show up for a data engineer.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Contrast sample/mud logs with wireline and LWD depth logs.</li>
+    <li>Read typical track roles: GR/SP, resistivity, density–neutron, sonic.</li>
+    <li>Explain gas effect, invasion, and open-hole vs cased-hole limits.</li>
+    <li>Describe DST packer isolation and what RFT/WFT adds.</li>
+  </ul>
+</section>
+
+<h2 id="sample">Sample (lithologic) log and cores</h2>
+<p>A <strong>sample / lithologic log</strong> is a strip describing each layer: header (operator, well, location), depth track, rock symbols (sand yellow, limestone blue, shale gray, coal black), plus texture, color, grain size, sorting, cement, porosity, oil stain, microfossils.</p>
+<p>Data come from <strong>cuttings</strong> on the shaker—sampled every ~10 ft (3 m), down to ~1 ft in pay. Wash, bag, examine under loupe; oil stain confirmed with <strong>UV light</strong> (fluorescence varies with °API). <strong>Lag time</strong> matters: cuttings are not from “this meter now.” Measure lag with a tracer or pump rate × hole volume (rule of thumb in notes: ~8" hole ≈ 10 min per 1,000 ft). Wrong lag → wrong depth on the show.</p>
+<p><strong>Core</strong> is the most faithful reservoir sample: cylinder ~1¾–5¼" diameter, often 20–90 ft (up to ~400). Trip out, run hollow coring bit and core barrel (inner barrel stationary; core catcher). Expensive—usually only pay, and only a few wells per field. Empty barrel in broken/loose rock can ironically mean good reservoir (could not catch it). Oriented cores mark north; native-state sleeves preserve fluids; lab slabs and plugs measure φ and k.</p>
+<p><strong>Sidewall cores</strong> after drilling: percussion bullets (~30 shots—may crush grain and bias φ/k) or rotary sidewall bits (less alteration). Small (~1" × 1¾")—lithology checks, not full lab plugs. Old <strong>driller’s logs</strong> crudely separated limestone/sand/shale.</p>
+
+<h2 id="dtime">Drilling-time log</h2>
+<p><strong>ROP</strong> in min/ft or min/m on the geolograph—real-time. Depends on RPM, WOB, bit type, <em>and</em> rock; hold parameters steady and rock dominates. With tricones (notes): sand faster, shale medium, carbonate slower. A <strong>drilling break</strong> (sudden ROP change) flags a bed boundary or porous zone. In WITSML this is the ROP channel—without rig state (on-bottom vs connection) breaks lie.</p>
+
+<h2 id="mud">Mud log</h2>
+<p>Chemistry and eyes on mud + cuttings hunting shows above background. Service company trailer, geos on 12-h tours, 24/7. Sample from gas trap at shaker + cuttings. API-style format: depth track + sample description; ROP left; gas/oil right—total gas curve, C1–C5 chromatograph, black bars for visible oil stain. This is WITSML <code>mudLog</code>. Gas also has lag—what you smell now left a deeper meter minutes ago.</p>
+
+<h2 id="wl">Wireline well logs — overview</h2>
+
+<figure class="figure">
+<svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cartoon well-log tracks">
+  <rect width="560" height="340" fill="#fffcf7"/>
+  <text x="280" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Cartoon log tracks (typical signatures)</text>
+  <!-- depth -->
+  <rect x="20" y="40" width="40" height="260" fill="#ebe4d6" stroke="#7a7366"/>
+  <text x="40" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#4a463c">MD</text>
+  <text x="40" y="100" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sh</text>
+  <text x="40" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sd</text>
+  <text x="40" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">gas</text>
+  <text x="40" y="260" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sh</text>
+  <!-- GR -->
+  <rect x="70" y="40" width="110" height="260" fill="#fff" stroke="#0d5c63"/>
+  <text x="125" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#0d5c63">GR</text>
+  <path d="M150 70 L155 100 L90 130 L95 180 L85 200 L150 230 L155 280" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="125" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">← clean | shale →</text>
+  <!-- Res -->
+  <rect x="190" y="40" width="110" height="260" fill="#fff" stroke="#c4922a"/>
+  <text x="245" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#c4922a">Resistivity</text>
+  <path d="M210 70 L215 120 L270 150 L275 200 L220 240 L215 280" fill="none" stroke="#8b3a2f" stroke-width="2"/>
+  <text x="245" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">low← brine | HC →high</text>
+  <!-- DEN-NEU -->
+  <rect x="310" y="40" width="110" height="260" fill="#fff" stroke="#2d6a4f"/>
+  <text x="365" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#2d6a4f">Den–Neu</text>
+  <path d="M340 70 L345 120 L330 160 L320 200 L350 240 L355 280" fill="none" stroke="#0d5c63" stroke-width="2"/>
+  <path d="M380 70 L375 120 L390 160 L400 195 L370 240 L365 280" fill="none" stroke="#c4922a" stroke-width="2"/>
+  <text x="365" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#8b3a2f">crossover</text>
+  <text x="365" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">gas effect crossover</text>
+  <!-- Sonic -->
+  <rect x="430" y="40" width="110" height="260" fill="#fff" stroke="#7a7366"/>
+  <text x="485" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#4a463c">Sonic Δt</text>
+  <path d="M460 70 L470 110 L500 150 L510 190 L470 240 L465 280" fill="none" stroke="#4a463c" stroke-width="2"/>
+  <text x="485" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">slow← pores | fast→</text>
+</svg>
+<figcaption>Figure: Schematic only—shale high GR / low R; sand clean GR; gas shows high R and density–neutron crossover.</figcaption>
+</figure>
+
+<p>A <strong>sonde</strong> on armored <strong>wireline</strong> runs after drilling (French invention ~1925; US ~1930). Condition the hole, trip out pipe, logging truck arrives. Tool ~27–60 ft (sometimes ~90), 3–4" OD; arms press to wall or centralize. Measure while pulling up. Deviated &gt;45° or horizontal: push with pipe/tubing or a tractor. One trip = a <strong>logging run</strong>; digital to truck, then cleaner final print.</p>
+<p>Format: header + central depth track. Depth datum <strong>KB</strong>, <strong>DF</strong>, or <strong>GL</strong>—mixing datums shifts every top. Track 1 left: usually SP or GR + caliper. Tracks 2/3: resistivity, density, neutron, sonic. Scales across the top; a <strong>kick</strong> is a big deflection. Vertical scales: correlation ~2"/100 ft; detail 5"+/100 ft. Most are <strong>open-hole</strong>; some run <strong>cased-hole</strong> (GR and neutron yes; classic resistivity no). <strong>Compensated</strong> tools correct for irregular hole.</p>
+
+<h2 id="elec">Electrical, induction, laterolog, SP</h2>
+<p>Old electric log: electrodes, inject current, read resistivity <strong>R</strong>. Short normal (~16") picks bed tops; long normal (~64") looks beyond the invaded zone (~0–100" of filtrate) toward true pore fluid. Brine conducts (low R); oil, gas, and fresh water do not (high R—kick right). Oil vs gas need other curves. If porosity is steady, OWC/GWC can be an R kick; with brine R + porosity you estimate oil saturation.</p>
+<p><strong>SP (spontaneous potential)</strong> still used: surface electrode + downhole electrode. Where permeable reservoir meets shale, filtrate salinity vs formation water creates voltage. Track 1: left = potential reservoir; right = shale / tight sand / dense limestone. Shale: SP right + R left (both toward center). Tight sand/dense lime: SP right + R right—SP+R alone cannot separate those two. <strong>Picks</strong> on deflections correlate wells.</p>
+<p><strong>Induction</strong> for freshwater, oil-based, synthetic, or air muds (coils induce currents). <strong>Laterolog / guard</strong> for salty mud (focuses current). Both on track 2, logarithmic scale. Dual induction/laterolog: shallow/medium/deep see different distances—shallow ≠ deep maps invasion (a permeability clue). <strong>Microlog</strong> (tiny pad spacing) sees cake thickness—thicker cake ≈ more filtrate ≈ more permeable.</p>
+
+<h2 id="gr">Gamma ray (GR)</h2>
+<p>Scintillation counter of natural K, Th, U radioactivity. Track 1: low left, high right. Shale (and some “hot” sands) to the right; clean sand/limestone (potential reservoir) to the left. Cheap; works open and cased. <strong>Spectral GR</strong> splits K/Th/U to avoid mistaking radioactive sand for shale. Estimates shaliness. On LWD horizontals, GR is often the lithology workhorse.</p>
+
+<h2 id="radio">Neutron and density</h2>
+<p>Radioactive source tools (source handled carefully from the truck).</p>
+<p><strong>Neutron / neutron porosity:</strong> fast neutrons slow down on hydrogen (in pore water, oil, gas). More H → higher apparent porosity if you assume liquid-filled pores. Track 2: porosity % (high left, low right often). Gas (less H per volume) reads <strong>too-low</strong> porosity. Works open and cased; compensated versions fix bad hole.</p>
+<p><strong>Formation density (FDL / gamma-gamma):</strong> gammas absorbed by dense atoms → bulk density → lithology + porosity. Matrix densities (0% pore): salt ~2.16, quartz ~2.65, limestone ~2.71, dolomite ~2.87 g/cc. Porosity often computed assuming limestone matrix (adjust for sand/dolomite). Gas tends to make density porosity read <strong>high</strong> (gas is light). Best practice: calibrate neutron + density to field cores.</p>
+
+<h2 id="gasfx">Gas effect</h2>
+<p>In gas: neutron porosity reads low; density porosity reads high → curves <strong>cross over</strong> on track 2 = <strong>gas effect</strong> (with corrections for true porosity). This is a depth-log gas flag—not the mud log’s total gas units.</p>
+
+<h2 id="other">Caliper, sonic, dipmeter, NMR, imaging</h2>
+<p><strong>Caliper:</strong> arms track hole diameter (track 1). Hole = bit size + washout + cake. Shale/coal wash wide; well-cemented sand/lime stay near gauge; salt + fresh mud can cavern. Uses: cement volume, compensate other logs, thick cake → permeable zone.</p>
+<p><strong>Sonic / acoustic:</strong> Δt (µs/ft) between receivers. Solids fast; fluid/gas-filled pores slower. Order of magnitude: shale slower, sand faster, lime/dolomite fastest; gas very slow. With known lithology → porosity. Misses fracture porosity (fractures attenuate); sonic amplitude helps detect fractures.</p>
+<p><strong>Photo-electric factor (Pe)</strong> with density = litho-density log (mineralogy: lime vs dolomite vs sand).</p>
+<p><strong>Dipmeter:</strong> multi-arm resistivity + gyro → bed dip and azimuth (tadpole plots).</p>
+<p><strong>NMR:</strong> hydrogen relaxation → So, Sw, total/effective porosity, perm hints, movable fluid, irreducible water, gas, residual oil—“will it flow,” not just % void.</p>
+<p><strong>Imaging:</strong> resistivity button pads or ultrasonic echoes → thin beds, unconformities, natural vs induced fractures, vugs, strike/dip.</p>
+<p><strong>Quick-look / computed logs:</strong> truck or data center Sw, porosity, lithology fractions, fractures, TVD.</p>
+<p>Mental checklist: SP/GR = is there reservoir? Deep R = what fluid? Neutron+density = porosity and gas effect. Caliper = hole/cake. Sonic = porosity/lithology/fractures. Pe = mineral.</p>
+
+<h2 id="mwd">MWD and LWD</h2>
+
+<figure class="figure">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MWD vs LWD vs wireline">
+  <rect width="560" height="260" fill="#fffcf7"/>
+  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Where the sensors sit</text>
+  <!-- drillstring -->
+  <rect x="40" y="50" width="30" height="180" fill="#c4b8a0" stroke="#4a463c"/>
+  <text x="55" y="45" text-anchor="middle" font-family="system-ui" font-size="9" fill="#4a463c">pipe</text>
+  <rect x="40" y="150" width="30" height="40" fill="#0d5c63"/>
+  <text x="100" y="175" font-family="system-ui" font-size="10" fill="#084248">LWD tools (GR, Res, Den, Neu…)</text>
+  <rect x="40" y="195" width="30" height="25" fill="#c4922a"/>
+  <text x="100" y="212" font-family="system-ui" font-size="10" fill="#7a5a10">MWD (inc, azi, toolface, WOB…)</text>
+  <polygon points="40,230 70,230 55,250" fill="#1a1a18"/>
+  <text x="100" y="245" font-family="system-ui" font-size="10" fill="#1a1a18">bit</text>
+  <line x1="280" y1="40" x2="280" y2="250" stroke="#d4cbb8"/>
+  <!-- wireline -->
+  <line x1="360" y1="40" x2="360" y2="200" stroke="#7a7366" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="345" y="200" width="30" height="40" fill="#8b3a2f"/>
+  <text x="420" y="100" font-family="system-ui" font-size="11" font-weight="700" fill="#4a463c">Wireline</text>
+  <text x="420" y="120" font-family="system-ui" font-size="10" fill="#7a7366">After drilling (or a trip).</text>
+  <text x="420" y="140" font-family="system-ui" font-size="10" fill="#7a7366">Sonde on cable from truck.</text>
+  <text x="420" y="220" font-family="system-ui" font-size="10" fill="#8b3a2f">logging tool</text>
+  <text x="200" y="80" font-family="system-ui" font-size="10" fill="#0d5c63">While drilling → mud pulse to surface</text>
+</svg>
+<figcaption>Figure: MWD/LWD ride in the BHA while drilling; wireline tools run on cable after (or during a trip).</figcaption>
+</figure>
+
+<p>Wireline is after. <strong>MWD/LWD</strong> ride above the bit while drilling. Power: mud turbine or batteries. Telemetry: <strong>mud pulse</strong> pressure waves to a surface transducer.</p>
+<ul>
+  <li><strong>LWD:</strong> resistivity, GR (natural/spectral), density, neutron, NMR, caliper—same families as wireline, near real time.</li>
+  <li><strong>MWD:</strong> toolface, azimuth, deviation, torque, WOB, temperature, pressure—the path from Ch 17.</li>
+</ul>
+<p><strong>Geosteering:</strong> lateral drifting out of a thin target (sometimes only ~7 ft). LWD feels top/base (often GR/Res); MWD says where the bit points; steerable corrects. Floor time log (ROP, WOB) ≠ LWD/wireline depth log (rock vs MD)—both coexist in WITSML as different logs.</p>
+
+<h2 id="dst">Drillstem test (DST)</h2>
+
+<figure class="figure">
+<svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DST packer isolation sketch">
+  <rect width="400" height="340" fill="#fffcf7"/>
+  <text x="200" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">DST — packer isolation</text>
+  <rect x="140" y="40" width="120" height="280" fill="#ebe4d6" stroke="#7a7366"/>
+  <rect x="170" y="40" width="60" height="200" fill="#fffcf7" stroke="#1a1a18" stroke-width="2"/>
+  <!-- packer -->
+  <rect x="145" y="180" width="110" height="24" fill="#0d5c63" stroke="#084248"/>
+  <text x="200" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#fff">packer</text>
+  <!-- perforated / test interval -->
+  <rect x="175" y="210" width="50" height="60" fill="#d4e8ea" stroke="#0d5c63" stroke-dasharray="3 2"/>
+  <text x="200" y="245" text-anchor="middle" font-family="system-ui" font-size="9" fill="#084248">test</text>
+  <text x="200" y="257" text-anchor="middle" font-family="system-ui" font-size="9" fill="#084248">zone</text>
+  <!-- mud above -->
+  <text x="300" y="100" font-family="system-ui" font-size="10" fill="#7a7366">mud column</text>
+  <text x="300" y="115" font-family="system-ui" font-size="10" fill="#7a7366">(isolated)</text>
+  <path d="M230 220 L280 220" stroke="#c4922a" stroke-width="2"/>
+  <text x="285" y="224" font-family="system-ui" font-size="10" fill="#c4922a">formation fluid ↑</text>
+  <text x="200" y="330" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Packer seals annulus so zone can flow into the drillstem</text>
+</svg>
+<figcaption>Figure: A DST packer isolates the test interval from the mud column so formation fluid can enter the drillstem.</figcaption>
+</figure>
+
+<p>A temporary completion while mud still fills the hole. Run drillstem with packer(s), perforated pipe, gauges, valves. Packer isolates the zone from the mud column; open the valve—formation fluid enters the drillstem. Bottom zone: one packer; higher zone: <strong>straddle</strong> packers. Gas often reaches surface (measure/flare); oil may flow or only rise partway up the pipe. Multiple open/shut periods → pressure buildup → permeability, reservoir pressure, skin. Duration: ~20 min to 3 days (longer = more certainty = more rig time). Open-hole or perforated cased; avoid unconsolidated sand. Mostly exploration wells.</p>
+
+<h2 id="rft">Repeat formation tester (RFT / WFT)</h2>
+<p>Wireline tool: pad/valve presses against the wall; fluid enters; pressure vs time → perm estimate. Sample chambers collect fluid for <strong>Rw</strong> and <strong>Sw</strong>. Repeat at many depths in one well.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li><code>log</code> = depth-indexed curves (GR, Res, Den, Neu, Sonic, Cal…); <code>mudLog</code> = cuttings/gas shows.</li>
+  <li>Porosity and <code>Sw</code> are often interpreted columns, not raw sensor channels.</li>
+  <li>Datum (KB/DF/GL) must match across wells or every top is wrong.</li>
+  <li>Time log (drilling) vs depth log (formation)—different objects, both valid.</li>
+  <li>DST/RFT results are tests/pressures/samples linked to wellbore intervals.</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>Why must you correct cuttings and mud-gas shows for lag time?</li>
+<li>What does density–neutron crossover usually indicate?</li>
+<li>Track 1 GR kicks which way in clean sand vs shale?</li>
+<li>How does a DST packer let you test while mud is still in the hole?</li>
+<li>MWD vs LWD—what does each primarily deliver?</li>
+<li>Why can SP + resistivity alone fail to separate tight sand from dense limestone?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Samples/gas take minutes to reach surface—without lag they are assigned to the wrong depth.</li>
+<li>Gas effect: neutron φ low, density φ high.</li>
+<li>Clean sand → low GR (left); shale → high GR (right).</li>
+<li>Packer seals the annulus so the test zone is isolated from the mud column and can flow into the drillstem.</li>
+<li>MWD: direction/toolface/drilling mechanics. LWD: formation-property logs while drilling.</li>
+<li>Both can show SP to the right and high R—need GR, porosity, Pe, or other curves.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Lag time</dt><dd>Delay for cuttings/gas to reach surface.</dd>
+<dt>Wireline log</dt><dd>Cable-conveyed depth log after (or during a trip).</dd>
+<dt>GR / Res</dt><dd>Shale indicator / fluid indicator curves.</dd>
+<dt>Gas effect</dt><dd>Density–neutron crossover in gas.</dd>
+<dt>Invasion</dt><dd>Mud filtrate displacing near-wellbore fluids.</dd>
+<dt>LWD / MWD</dt><dd>Logging vs measurements while drilling.</dd>
+<dt>DST</dt><dd>Drillstem test with packer isolation.</dd>
+<dt>RFT / WFT</dt><dd>Wireline formation tester for pressure/samples.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch17.html"><span class="label">Previous</span>Ch 17 · Drilling Techniques</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
