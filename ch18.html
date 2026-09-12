@@ -65,6 +65,19 @@
 
 <h2 id="sample">Sample (lithologic) log and cores</h2>
 <p>A <strong>sample / lithologic log</strong> is a strip describing each layer: header (operator, well, location), depth track, rock symbols (sand yellow, limestone blue, shale gray, coal black), plus texture, color, grain size, sorting, cement, porosity, oil stain, microfossils.</p>
+<figure class="figure">
+  <img src="img/core-samples.jpg" alt="Rock core samples—whole cores and plugs ground-truth porosity, permeability, and lithology from the sample log" loading="lazy" width="1600">
+  <figcaption>Rock core samples—whole cores and plugs ground-truth porosity, permeability, and lithology from the sample log.
+    <span class="src">CC BY-SA 4.0 — Thamizhpparithi Maari. <a href="https://commons.wikimedia.org/wiki/File:Core_samples.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
+</figure>
+<figure class="figure">
+  <img src="img/drill-core.jpg" alt="Drill core close-up—layering and texture visible for lithologic description" loading="lazy" width="1600">
+  <figcaption>Drill core close-up—layering and texture visible for lithologic description.
+    <span class="src">CC BY-SA 4.0 — Rjhogarth. <a href="https://commons.wikimedia.org/wiki/File:Drill_core.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
+</figure>
+
 <p>Data come from <strong>cuttings</strong> on the shaker—sampled every ~10 ft (3 m), down to ~1 ft in pay. Wash, bag, examine under loupe; oil stain confirmed with <strong>UV light</strong> (fluorescence varies with °API). <strong>Lag time</strong> matters: cuttings are not from “this meter now.” Measure lag with a tracer or pump rate × hole volume (rule of thumb in notes: ~8" hole ≈ 10 min per 1,000 ft). Wrong lag → wrong depth on the show.</p>
 <p><strong>Core</strong> is the most faithful reservoir sample: cylinder ~1¾–5¼" diameter, often 20–90 ft (up to ~400). Trip out, run hollow coring bit and core barrel (inner barrel stationary; core catcher). Expensive—usually only pay, and only a few wells per field. Empty barrel in broken/loose rock can ironically mean good reservoir (could not catch it). Oriented cores mark north; native-state sleeves preserve fluids; lab slabs and plugs measure φ and k.</p>
 <p><strong>Sidewall cores</strong> after drilling: percussion bullets (~30 shots—may crush grain and bias φ/k) or rotary sidewall bits (less alteration). Small (~1" × 1¾")—lithology checks, not full lab plugs. Old <strong>driller’s logs</strong> crudely separated limestone/sand/shale.</p>
@@ -74,47 +87,29 @@
 
 <h2 id="mud">Mud log</h2>
 <p>Chemistry and eyes on mud + cuttings hunting shows above background. Service company trailer, geos on 12-h tours, 24/7. Sample from gas trap at shaker + cuttings. API-style format: depth track + sample description; ROP left; gas/oil right—total gas curve, C1–C5 chromatograph, black bars for visible oil stain. This is WITSML <code>mudLog</code>. Gas also has lag—what you smell now left a deeper meter minutes ago.</p>
+<figure class="figure">
+  <img src="img/oil-drilling-rig.jpg" alt="Drilling location—mud logging units sit by the shakers reading cuttings gas and lithology while the bit drills" loading="lazy" width="1600">
+  <figcaption>Drilling location—mud logging units sit by the shakers reading cuttings gas and lithology while the bit drills.
+    <span class="src">CC BY-SA 4.0 — Emengich. <a href="https://commons.wikimedia.org/wiki/File:Oil_drilling_rig.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
+</figure>
 
 <h2 id="wl">Wireline well logs — overview</h2>
 
+<p>A <strong>sonde</strong> on armored <strong>wireline</strong> runs after drilling (French invention ~1925; US ~1930). Condition the hole, trip out pipe, logging truck arrives. Tool ~27–60 ft (sometimes ~90), 3–4" OD; arms press to wall or centralize. Measure while pulling up. Deviated &gt;45° or horizontal: push with pipe/tubing or a tractor. One trip = a <strong>logging run</strong>; digital to truck, then cleaner final print.</p>
 <figure class="figure">
-<svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cartoon well-log tracks">
-  <rect width="560" height="340" fill="#fffcf7"/>
-  <text x="280" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Cartoon log tracks (typical signatures)</text>
-  <!-- depth -->
-  <rect x="20" y="40" width="40" height="260" fill="#ebe4d6" stroke="#7a7366"/>
-  <text x="40" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#4a463c">MD</text>
-  <text x="40" y="100" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sh</text>
-  <text x="40" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sd</text>
-  <text x="40" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">gas</text>
-  <text x="40" y="260" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">sh</text>
-  <!-- GR -->
-  <rect x="70" y="40" width="110" height="260" fill="#fff" stroke="#0d5c63"/>
-  <text x="125" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#0d5c63">GR</text>
-  <path d="M150 70 L155 100 L90 130 L95 180 L85 200 L150 230 L155 280" fill="none" stroke="#2d6a4f" stroke-width="2"/>
-  <text x="125" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">← clean | shale →</text>
-  <!-- Res -->
-  <rect x="190" y="40" width="110" height="260" fill="#fff" stroke="#c4922a"/>
-  <text x="245" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#c4922a">Resistivity</text>
-  <path d="M210 70 L215 120 L270 150 L275 200 L220 240 L215 280" fill="none" stroke="#8b3a2f" stroke-width="2"/>
-  <text x="245" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">low← brine | HC →high</text>
-  <!-- DEN-NEU -->
-  <rect x="310" y="40" width="110" height="260" fill="#fff" stroke="#2d6a4f"/>
-  <text x="365" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#2d6a4f">Den–Neu</text>
-  <path d="M340 70 L345 120 L330 160 L320 200 L350 240 L355 280" fill="none" stroke="#0d5c63" stroke-width="2"/>
-  <path d="M380 70 L375 120 L390 160 L400 195 L370 240 L365 280" fill="none" stroke="#c4922a" stroke-width="2"/>
-  <text x="365" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#8b3a2f">crossover</text>
-  <text x="365" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">gas effect crossover</text>
-  <!-- Sonic -->
-  <rect x="430" y="40" width="110" height="260" fill="#fff" stroke="#7a7366"/>
-  <text x="485" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="700" fill="#4a463c">Sonic Δt</text>
-  <path d="M460 70 L470 110 L500 150 L510 190 L470 240 L465 280" fill="none" stroke="#4a463c" stroke-width="2"/>
-  <text x="485" y="315" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7a7366">slow← pores | fast→</text>
-</svg>
-<figcaption>Figure: Schematic only—shale high GR / low R; sand clean GR; gas shows high R and density–neutron crossover.</figcaption>
+  <img src="img/wellhead-blue.jpg" alt="Wellhead after drilling—wireline tools are run on cable through the wellhead/BOP to acquire open-hole or cased-hole logs" loading="lazy" width="1600">
+  <figcaption>Wellhead after drilling—wireline tools are run on cable through the wellhead/BOP to acquire open-hole or cased-hole logs.
+    <span class="src">Public domain — Dexcel. <a href="https://commons.wikimedia.org/wiki/File:Wellhead-blue.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
+</figure>
+<figure class="figure">
+  <img src="img/drill-bit.jpg" alt="Bit and BHA context—LWD sensors ride near the bit; wireline tools come later on a separate logging run" loading="lazy" width="1600">
+  <figcaption>Bit and BHA context—LWD sensors ride near the bit; wireline tools come later on a separate logging run.
+    <span class="src">CC BY-SA 3.0 — Kati Vald. <a href="https://commons.wikimedia.org/wiki/File:Drill_bit.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
 </figure>
 
-<p>A <strong>sonde</strong> on armored <strong>wireline</strong> runs after drilling (French invention ~1925; US ~1930). Condition the hole, trip out pipe, logging truck arrives. Tool ~27–60 ft (sometimes ~90), 3–4" OD; arms press to wall or centralize. Measure while pulling up. Deviated &gt;45° or horizontal: push with pipe/tubing or a tractor. One trip = a <strong>logging run</strong>; digital to truck, then cleaner final print.</p>
 <p>Format: header + central depth track. Depth datum <strong>KB</strong>, <strong>DF</strong>, or <strong>GL</strong>—mixing datums shifts every top. Track 1 left: usually SP or GR + caliper. Tracks 2/3: resistivity, density, neutron, sonic. Scales across the top; a <strong>kick</strong> is a big deflection. Vertical scales: correlation ~2"/100 ft; detail 5"+/100 ft. Most are <strong>open-hole</strong>; some run <strong>cased-hole</strong> (GR and neutron yes; classic resistivity no). <strong>Compensated</strong> tools correct for irregular hole.</p>
 
 <h2 id="elec">Electrical, induction, laterolog, SP</h2>
@@ -145,33 +140,14 @@
 
 <h2 id="mwd">MWD and LWD</h2>
 
+<p>Wireline is after. <strong>MWD/LWD</strong> ride above the bit while drilling. Power: mud turbine or batteries. Telemetry: <strong>mud pulse</strong> pressure waves to a surface transducer.</p>
 <figure class="figure">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MWD vs LWD vs wireline">
-  <rect width="560" height="260" fill="#fffcf7"/>
-  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Where the sensors sit</text>
-  <!-- drillstring -->
-  <rect x="40" y="50" width="30" height="180" fill="#c4b8a0" stroke="#4a463c"/>
-  <text x="55" y="45" text-anchor="middle" font-family="system-ui" font-size="9" fill="#4a463c">pipe</text>
-  <rect x="40" y="150" width="30" height="40" fill="#0d5c63"/>
-  <text x="100" y="175" font-family="system-ui" font-size="10" fill="#084248">LWD tools (GR, Res, Den, Neu…)</text>
-  <rect x="40" y="195" width="30" height="25" fill="#c4922a"/>
-  <text x="100" y="212" font-family="system-ui" font-size="10" fill="#7a5a10">MWD (inc, azi, toolface, WOB…)</text>
-  <polygon points="40,230 70,230 55,250" fill="#1a1a18"/>
-  <text x="100" y="245" font-family="system-ui" font-size="10" fill="#1a1a18">bit</text>
-  <line x1="280" y1="40" x2="280" y2="250" stroke="#d4cbb8"/>
-  <!-- wireline -->
-  <line x1="360" y1="40" x2="360" y2="200" stroke="#7a7366" stroke-width="2" stroke-dasharray="3 2"/>
-  <rect x="345" y="200" width="30" height="40" fill="#8b3a2f"/>
-  <text x="420" y="100" font-family="system-ui" font-size="11" font-weight="700" fill="#4a463c">Wireline</text>
-  <text x="420" y="120" font-family="system-ui" font-size="10" fill="#7a7366">After drilling (or a trip).</text>
-  <text x="420" y="140" font-family="system-ui" font-size="10" fill="#7a7366">Sonde on cable from truck.</text>
-  <text x="420" y="220" font-family="system-ui" font-size="10" fill="#8b3a2f">logging tool</text>
-  <text x="200" y="80" font-family="system-ui" font-size="10" fill="#0d5c63">While drilling → mud pulse to surface</text>
-</svg>
-<figcaption>Figure: MWD/LWD ride in the BHA while drilling; wireline tools run on cable after (or during a trip).</figcaption>
+  <img src="img/usgs-drill-bit.jpg" alt="Drill bit (USGS)—MWD/LWD tools are hosted in collars above the bit to measure while drilling" loading="lazy" width="1600">
+  <figcaption>Drill bit (USGS)—MWD/LWD tools are hosted in collars above the bit to measure while drilling.
+    <span class="src">Public domain — USGS. <a href="https://commons.wikimedia.org/wiki/File:USGS.Natural_Gas_Well_Drill_Bit.Fayeteville_Shale_28099191.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
 </figure>
 
-<p>Wireline is after. <strong>MWD/LWD</strong> ride above the bit while drilling. Power: mud turbine or batteries. Telemetry: <strong>mud pulse</strong> pressure waves to a surface transducer.</p>
 <ul>
   <li><strong>LWD:</strong> resistivity, GR (natural/spectral), density, neutron, NMR, caliper—same families as wireline, near real time.</li>
   <li><strong>MWD:</strong> toolface, azimuth, deviation, torque, WOB, temperature, pressure—the path from Ch 17.</li>
@@ -180,30 +156,13 @@
 
 <h2 id="dst">Drillstem test (DST)</h2>
 
-<figure class="figure">
-<svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DST packer isolation sketch">
-  <rect width="400" height="340" fill="#fffcf7"/>
-  <text x="200" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">DST — packer isolation</text>
-  <rect x="140" y="40" width="120" height="280" fill="#ebe4d6" stroke="#7a7366"/>
-  <rect x="170" y="40" width="60" height="200" fill="#fffcf7" stroke="#1a1a18" stroke-width="2"/>
-  <!-- packer -->
-  <rect x="145" y="180" width="110" height="24" fill="#0d5c63" stroke="#084248"/>
-  <text x="200" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#fff">packer</text>
-  <!-- perforated / test interval -->
-  <rect x="175" y="210" width="50" height="60" fill="#d4e8ea" stroke="#0d5c63" stroke-dasharray="3 2"/>
-  <text x="200" y="245" text-anchor="middle" font-family="system-ui" font-size="9" fill="#084248">test</text>
-  <text x="200" y="257" text-anchor="middle" font-family="system-ui" font-size="9" fill="#084248">zone</text>
-  <!-- mud above -->
-  <text x="300" y="100" font-family="system-ui" font-size="10" fill="#7a7366">mud column</text>
-  <text x="300" y="115" font-family="system-ui" font-size="10" fill="#7a7366">(isolated)</text>
-  <path d="M230 220 L280 220" stroke="#c4922a" stroke-width="2"/>
-  <text x="285" y="224" font-family="system-ui" font-size="10" fill="#c4922a">formation fluid ↑</text>
-  <text x="200" y="330" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Packer seals annulus so zone can flow into the drillstem</text>
-</svg>
-<figcaption>Figure: A DST packer isolates the test interval from the mud column so formation fluid can enter the drillstem.</figcaption>
-</figure>
-
 <p>A temporary completion while mud still fills the hole. Run drillstem with packer(s), perforated pipe, gauges, valves. Packer isolates the zone from the mud column; open the valve—formation fluid enters the drillstem. Bottom zone: one packer; higher zone: <strong>straddle</strong> packers. Gas often reaches surface (measure/flare); oil may flow or only rise partway up the pipe. Multiple open/shut periods → pressure buildup → permeability, reservoir pressure, skin. Duration: ~20 min to 3 days (longer = more certainty = more rig time). Open-hole or perforated cased; avoid unconsolidated sand. Mostly exploration wells.</p>
+<figure class="figure">
+  <img src="img/first-oil-well-drake.jpg" alt="Historic Drake Well—testing whether a well can flow commercial volumes is as old as the industry; today we use DST/RFT i" loading="lazy" width="1600">
+  <figcaption>Historic Drake Well—testing whether a well can flow commercial volumes is as old as the industry; today we use DST/RFT instead of “wait and see.”
+    <span class="src">Public domain — Unknown (c.1890). <a href="https://commons.wikimedia.org/wiki/File:First_Oil_Well.jpg" rel="noopener noreferrer">Source</a></span>
+  </figcaption>
+</figure>
 
 <h2 id="rft">Repeat formation tester (RFT / WFT)</h2>
 <p>Wireline tool: pad/valve presses against the wall; fluid enters; pressure vs time → perm estimate. Sample chambers collect fluid for <strong>Rw</strong> and <strong>Sw</strong>. Repeat at many depths in one well.</p>
@@ -238,7 +197,7 @@
 
   </main>
 </div>
-  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Figures are public-domain or openly licensed photographs and published diagrams. Not a substitute for the book.</p></footer>
   <script src="app.js"></script>
 </body>
 </html>
