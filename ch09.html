@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 9 Source Rocks, Generation, Migration, Accumulation — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#source">Source rocks</a></li>
+  <li><a href="#gen">Generation</a></li>
+  <li><a href="#mig">Migration</a></li>
+  <li><a href="#acc">Accumulation</a></li>
+  <li><a href="#field">Field vs reservoir</a></li>
+  <li><a href="#res">Reservoir quality</a></li>
+  <li><a href="#sat">Saturation & wettability</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Chapter 9 — Source Rocks, Generation, Migration &amp; Accumulation</h1>
+<p class="why-matters" id="why">A beautiful structure on seismic is worthless if nothing ever generated, migrated, or arrived while the trap existed. This chapter is the petroleum system’s engine room—and the reason dry holes still happen after perfect drilling.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Identify common source rocks and what “gas-prone” means.</li>
+    <li>Place biogenic gas, oil window, and thermogenic gas on a temperature story (with TVD caveats).</li>
+    <li>Explain migration paths, why traps must pre-date charge, and density stacking.</li>
+    <li>Define field vs reservoir, porosity/permeability cutoffs, and water saturation.</li>
+  </ul>
+</section>
+
+<h2 id="source">Source rock</h2>
+<p>A <strong>source rock</strong> can generate oil and/or gas from ancient organic matter mixed with sediment. Most organics oxidize and rot; preservation needs rapid burial or an oxygen-poor seabed. The rock’s dark color often tracks that organic content.</p>
+<p>Sources include coal, black shale, and some dark limestones. <strong>Coal</strong> (buried wood) yields methane—mine explosions and <strong>coal-bed gas</strong>. <strong>Black shale</strong> is the most common source (~1–3% organic, up to ~20%); green/gray shale at ~0.5% is usually too lean. Dark limestones matter in places like North Africa and the Middle East. If the only effective source is coal, the basin is <strong>gas-prone</strong>.</p>
+
+<h2 id="gen">Generation — temperature rules</h2>
+<p>You need roughly <strong>~65 °C (150 °F)</strong>, achieved by burying the source. Deeper usually means hotter.</p>
+<ul>
+  <li><strong>Biogenic / microbial gas:</strong> near surface, bacteria make nearly pure methane quickly (swamp gas). It usually leaks to air; rare traps (e.g., under permafrost) can hold huge volumes. Bacteria stop as depth/temperature rise.</li>
+  <li><strong>Oil window:</strong> in a typical basin ~<strong>65–150 °C</strong> ≈ ~<strong>2,100–5,500 m (7,000–18,000 ft)</strong> onshore for a normal gradient. Oil leaves “good” (~30–40 °API). Heavy oil is usually degraded later by bacteria and other processes—not born heavy.</li>
+  <li><strong>Below the window:</strong> &gt;~150 °C → <strong>thermogenic gas</strong>. Shallower/cooler within the gas realm → wetter gas; deeper/hotter → dry gas. Above ~150 °C oil cracks toward graphite + gas—a floor for classic light-oil fields in that model (~5,500 m). Deep sand with carbon-coated grains can mark burned oil. Exception: very low gradients (e.g., Gulf of Mexico) can keep oil much deeper.</li>
+</ul>
+<p>A <strong>dry basin</strong> may lack rich source or never entered the window. <strong>Mature</strong> = had temperature and time; <strong>immature</strong> = not yet. Of organic matter that did get deep enough, a substantial fraction (notes cite ~30–70%) may generate.</p>
+
+<figure class="figure">
+<svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oil window vs gas window by temperature">
+  <rect width="560" height="340" fill="#fffcf7"/>
+  <text x="280" y="28" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="700" fill="#084248">Oil window vs gas window (temperature rules)</text>
+  <!-- depth axis -->
+  <line x1="100" y1="50" x2="100" y2="300" stroke="#1a1a18" stroke-width="2"/>
+  <text x="50" y="55" font-family="system-ui" font-size="10" fill="#7a7366">TVD</text>
+  <text x="30" y="80" font-family="system-ui" font-size="10" fill="#4a463c">~0 m</text>
+  <text x="20" y="150" font-family="system-ui" font-size="10" fill="#4a463c">~2130 m</text>
+  <text x="20" y="250" font-family="system-ui" font-size="10" fill="#4a463c">~5500 m</text>
+  <!-- zones -->
+  <rect x="110" y="55" width="320" height="70" fill="#ebe4d6" stroke="#7a7366"/>
+  <text x="270" y="85" text-anchor="middle" font-family="system-ui" font-size="12" fill="#4a463c">Immature / biogenic zone</text>
+  <text x="270" y="105" text-anchor="middle" font-family="system-ui" font-size="11" fill="#7a7366">&lt; ~65 °C — organic matter not yet cooked to oil</text>
+  <rect x="110" y="125" width="320" height="100" fill="#d4e8ea" stroke="#0d5c63" stroke-width="2"/>
+  <text x="270" y="160" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">OIL WINDOW</text>
+  <text x="270" y="180" text-anchor="middle" font-family="system-ui" font-size="11" fill="#0d5c63">~65–150 °C  ·  typical ~2130–5500 m TVD</text>
+  <text x="270" y="200" text-anchor="middle" font-family="system-ui" font-size="11" fill="#0d5c63">(assuming a normal geothermal gradient)</text>
+  <rect x="110" y="225" width="320" height="70" fill="#3d3a32" stroke="#1a1a18"/>
+  <text x="270" y="255" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#f6f1e8">GAS WINDOW</text>
+  <text x="270" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#d4e8ea">&gt; ~150 °C — thermogenic gas; oil cracks to gas + graphite</text>
+  <text x="100" y="325" font-family="system-ui" font-size="10" fill="#8b3a2f">⚠ Depths are illustrative for a typical gradient. Hot basins → shallower window. Use TVD (°C), never MD.</text>
+</svg>
+<figcaption>Figure: Generation windows are temperature ranges. Meter values assume a typical geothermal gradient; cold or hot basins shift them.</figcaption>
+</figure>
+
+
+<h2 id="mig">Migration</h2>
+<p>Source shale is impermeable. When solid kerogen becomes liquid/gas, volume rises, the rock fractures, hydrocarbons escape, and fractures may close again. Oil/gas are buoyant relative to water → they rise along faults, fractures, unconformities, and <strong>carrier beds</strong> (high-permeability layers). No trap on the path → <strong>seep</strong>. On average only a small share of generated HC is trapped (notes: ~10%, range ~0.3–36%); the rest stays in source, is lost en route, or leaks.</p>
+<p>Kitchen (basin deep) and trap locations often differ on map and depth—so thermogenic gas can appear shallow after long migration.</p>
+
+<h2 id="acc">Accumulation</h2>
+<p>The trap must <strong>exist before</strong> migration. Fold an anticline after charge and it stays empty. In the trap, fluids stack by density: free gas cap, oil, water.</p>
+<ul>
+  <li><strong>Saturated pool:</strong> always has a gas cap; oil is full of dissolved gas.</li>
+  <li><strong>Unsaturated pool:</strong> no gas cap; oil could still dissolve more gas.</li>
+  <li>Sometimes only <strong>gas over water</strong>.</li>
+</ul>
+<p><strong>Gas–oil</strong> and <strong>oil–water contacts</strong> may be sharp or gradual, usually near-horizontal. Highest point = <strong>crest</strong>. First wildcats aim <strong>on-structure</strong>; far <strong>off-structure</strong> often means dry / wet wells.</p>
+<p><strong>Caprock / seal:</strong> impermeable layer above—typically shale or salt; also fine limestone (micrite/chalk), tightly cemented rock, or permafrost.</p>
+
+<figure class="figure">
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Density stack under a seal">
+  <rect width="420" height="300" fill="#fffcf7"/>
+  <text x="210" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Fluid density stack under a seal</text>
+  <path d="M60 50 Q210 20 360 50 L360 70 Q210 45 60 70 Z" fill="#c4b8a0" stroke="#4a463c"/>
+  <text x="210" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a18">Caprock</text>
+  <ellipse cx="210" cy="100" rx="140" ry="28" fill="#f3e6c8" stroke="#c4922a" stroke-width="1.5"/>
+  <text x="210" y="105" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#7a5a10">Free gas cap</text>
+  <path d="M70 125 Q210 115 350 125 L340 175 Q210 185 80 175 Z" fill="#2d6a4f" stroke="#1a1a18"/>
+  <text x="210" y="155" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#fff">Oil column</text>
+  <path d="M80 175 Q210 185 340 175 L330 250 Q210 265 90 250 Z" fill="#5b8fa8" stroke="#1a1a18"/>
+  <text x="210" y="220" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#fff">Formation water</text>
+  <line x1="360" y1="125" x2="400" y2="125" stroke="#0d5c63" stroke-width="1"/>
+  <text x="365" y="120" font-family="system-ui" font-size="9" fill="#0d5c63">GOC</text>
+  <line x1="350" y1="175" x2="400" y2="175" stroke="#0d5c63" stroke-width="1"/>
+  <text x="365" y="170" font-family="system-ui" font-size="9" fill="#0d5c63">OWC</text>
+  <text x="210" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Contacts are usually near-horizontal. Crest = highest point of the trap.</text>
+</svg>
+<figcaption>Figure: Buoyancy sorts fluids—gas on top, oil in the middle, water below—held by impermeable caprock.</figcaption>
+</figure>
+
+
+<figure class="figure">
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Petroleum system: source to trap">
+  <rect width="640" height="280" fill="#fffcf7"/>
+  <!-- layers -->
+  <rect x="40" y="40" width="560" height="36" fill="#c4b8a0" stroke="#4a463c" stroke-width="1"/>
+  <text x="50" y="63" font-family="system-ui" font-size="12" fill="#1a1a18">Caprock / seal (shale or salt)</text>
+  <rect x="40" y="76" width="560" height="50" fill="#d4e8ea" stroke="#0d5c63" stroke-width="1.5"/>
+  <text x="50" y="98" font-family="system-ui" font-size="12" fill="#084248" font-weight="700">Reservoir rock (porous &amp; permeable)</text>
+  <text x="50" y="116" font-family="system-ui" font-size="11" fill="#0d5c63">gas cap · oil · water — stacked by density under the seal</text>
+  <path d="M 80 126 L 200 180 L 280 160 L 400 210 L 520 170 L 600 200" fill="none" stroke="#c4922a" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="300" y="155" font-family="system-ui" font-size="11" fill="#c4922a" font-weight="600">↑ migration (buoyancy)</text>
+  <rect x="40" y="210" width="200" height="44" fill="#3d3a32" stroke="#1a1a18" stroke-width="1"/>
+  <text x="50" y="237" font-family="system-ui" font-size="12" fill="#f6f1e8">Source rock (black shale)</text>
+  <rect x="280" y="210" width="320" height="44" fill="#ebe4d6" stroke="#7a7366" stroke-width="1"/>
+  <text x="290" y="237" font-family="system-ui" font-size="12" fill="#4a463c">Carrier beds / fractures / faults</text>
+  <!-- arrows -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c4922a"/></marker>
+  </defs>
+  <path d="M140 210 L140 126" stroke="#c4922a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="40" y="270" font-family="system-ui" font-size="11" fill="#7a7366">Petroleum system: source → generation → migration → reservoir + trap + seal</text>
+</svg>
+<figcaption>Figure: The petroleum system chain. Without any one link (source, reservoir, trap/seal), there is no commercial field.</figcaption>
+</figure>
+
+
+<h2 id="field">Field vs reservoir; size</h2>
+<p>A <strong>field</strong> is the surface area over one or more reservoirs in <strong>the same trap</strong> (often named for a town, hill, or creek). A <strong>reservoir</strong> is a producing zone that does <strong>not communicate</strong> with another—fluids do not cross. Oil within one reservoir is fairly uniform; between reservoirs in one field, °API and sweet/sour can differ. Shared pressure ⇒ one reservoir. Reservoirs are named for the rock unit.</p>
+<p>Size language from the notes: giant oil ≥ 500 MMbbl recoverable; super giant ≥ 5 billion bbl; giant gas ≥ 3 Tcf; super giant ≥ 20 Tcf. Timing from generate → migrate → trap can be ancient or geologically young—and in some places still ongoing.</p>
+
+<h2 id="res">Reservoir rock quality</h2>
+<p>A reservoir must <strong>store and transmit</strong>—porosity <em>and</em> permeability.</p>
+<p><strong>Porosity</strong> is % volume that is not solid. Measured from cuttings (eyeball ±1–2%), core + porosimeter, or porosity logs (neutron, density, sonic). For oil, rough quality bands: 0–5% none, 5–10% poor, 10–15% fair, 15–20% good, 20–25% excellent. Gas compresses, so it can live with less porosity, especially deep. <strong>Primary</strong> pores form at deposition; <strong>secondary</strong> from dissolution or fractures. Completion cutoffs often ~8–10% in sands, ~3–5% in limestones (fractures help)—and they move with depth and economics.</p>
+<p><strong>Permeability</strong> (darcy / millidarcy) is ease of flow, measured on plugs with a permeameter. For oil: ~1–10 md poor, 10–100 good, 100–1,000 excellent. Gas is far more mobile (~50×), so it needs less perm.</p>
+
+<figure class="figure">
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Porosity vs permeability">
+  <rect width="560" height="220" fill="#fffcf7"/>
+  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Porosity ≠ permeability</text>
+  <!-- connected -->
+  <rect x="30" y="40" width="240" height="150" fill="#d4e8ea" stroke="#0d5c63" rx="4"/>
+  <text x="150" y="60" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#084248">Connected pores → permeable</text>
+  <circle cx="80" cy="110" r="22" fill="#fffcf7" stroke="#0d5c63" stroke-width="2"/>
+  <circle cx="130" cy="100" r="20" fill="#fffcf7" stroke="#0d5c63" stroke-width="2"/>
+  <circle cx="175" cy="120" r="24" fill="#fffcf7" stroke="#0d5c63" stroke-width="2"/>
+  <circle cx="220" cy="105" r="18" fill="#fffcf7" stroke="#0d5c63" stroke-width="2"/>
+  <path d="M95 100 L115 95 M145 105 L160 112 M190 115 L208 108" stroke="#c4922a" stroke-width="3"/>
+  <text x="150" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#0d5c63">Wide pore throats — fluid can flow</text>
+  <!-- isolated -->
+  <rect x="290" y="40" width="240" height="150" fill="#ebe4d6" stroke="#7a7366" rx="4"/>
+  <text x="410" y="60" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#4a463c">Isolated pores → tight</text>
+  <circle cx="340" cy="105" r="20" fill="#fffcf7" stroke="#7a7366" stroke-width="2"/>
+  <circle cx="400" cy="125" r="18" fill="#fffcf7" stroke="#7a7366" stroke-width="2"/>
+  <circle cx="455" cy="100" r="22" fill="#fffcf7" stroke="#7a7366" stroke-width="2"/>
+  <circle cx="490" cy="140" r="14" fill="#fffcf7" stroke="#7a7366" stroke-width="2"/>
+  <text x="410" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Narrow / blocked throats — high φ, low k</text>
+</svg>
+<figcaption>Figure: A rock can be porous yet impermeable if pore throats are tiny (shale, chalk, tight sand).</figcaption>
+</figure>
+
+<p>More porosity often means more perm <em>in the same facies</em>, but <strong>pore throat</strong> size rules. Fine grains → tiny throats → no flow. Coarse porous sand → permeable. Porous shale or chalk → little or zero perm. Sand or limestone with no perm = <strong>tight</strong> (example in notes: high porosity, millidarcy-to-sub-md perm → huge oil in place that will not flow easily).</p>
+
+<h2 id="sat">Saturation and wettability</h2>
+<p>Pores always hold some water with oil/gas. Saturations are percentages that sum to 100%—hence oil wells also produce <strong>brine</strong>. The fluid coating pore walls is the <strong>wetting fluid</strong>: most <strong>sands are water-wet</strong> (water on walls, oil in centers → oil flows more easily); many <strong>limestones are oil-wet</strong> (harder recovery). Below the OWC or GWC, pores are 100% water.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li><code>well</code> / <code>wellbore</code> sit in a field context; “reservoir” is a geologic/engineering zone—often linked via tops and interpreted intervals.</li>
+  <li>Porosity and <code>Sw</code> are typical log-derived columns; permeability may come from core, NMR, or tests—not always a live channel.</li>
+  <li>Contacts (GOC/OWC) are depths—store and compare in <strong>TVD</strong> when wells deviate.</li>
+  <li>Temperature / maturity stories need TVD (and geothermal context), not MD along a lateral.</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>Why is black shale a better source than green/gray shale?</li>
+<li>What temperature roughly starts the oil window, and what replaces oil generation below ~150 °C?</li>
+<li>Why can a trap folded after migration be empty?</li>
+<li>How can a rock have high porosity but still be “tight”?</li>
+<li>What is the difference between a field and a reservoir?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Much higher organic content (often 1–3%+ vs ~0.5%).</li>
+<li>~65 °C starts oil; hotter than ~150 °C favors thermogenic gas / cracking of oil.</li>
+<li>Charge already passed—timing matters as much as geometry.</li>
+<li>Pore throats too small or disconnected—fluid cannot flow (low permeability).</li>
+<li>Field = surface area over reservoirs in the same trap; reservoir = non-communicating producing zone.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Source rock</dt><dd>Organic-rich rock capable of generating HC.</dd>
+<dt>Oil / gas window</dt><dd>Temperature ranges for oil vs thermogenic gas.</dd>
+<dt>Carrier bed</dt><dd>Permeable layer that transmits migrating HC.</dd>
+<dt>Caprock / seal</dt><dd>Impermeable barrier above the accumulation.</dd>
+<dt>Saturated pool</dt><dd>Oil at bubble point with a free gas cap.</dd>
+<dt>Porosity cutoff</dt><dd>Minimum φ often required to complete.</dd>
+<dt>Tight</dt><dd>Porous or not—insufficient permeability to flow.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch01.html"><span class="label">Previous</span>Ch 1 · The Nature of Gas and Oil</a><a class="next" href="ch10.html"><span class="label">Next</span>Ch 10 · Reservoir Rocks</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
