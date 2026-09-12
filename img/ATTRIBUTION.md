@@ -206,3 +206,10 @@ No figures were copied from Hyne / PennWell / geokniga.
 - **Author:** Tim Evanson
 - **Source:** https://commons.wikimedia.org/wiki/File:Obenor_2_oil_well_-_wellhead_-_Arnegard_North_Dakota_-_2013-07-04.jpg
 - **Used in:** ch01, ch14, ch17
+
+## `chalk-dover-stjohn.jpg`
+
+- **License:** CC BY 2.0
+- **Author:** James St. John
+- **Source:** https://commons.wikimedia.org/wiki/File:Chalk_(%22Upper_Chalk%22_Formation,_Upper_Cretaceous;_White_Cliffs_of_Dover,_England,_southern_Britain).jpg
+- **Used in:** ch10
