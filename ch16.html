@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 16 Drilling Problems — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#sub">Subsurface conditions</a></li>
+  <li><a href="#fish">Fishing</a></li>
+  <li><a href="#stuck">Stuck pipe</a></li>
+  <li><a href="#slough">Sloughing shale</a></li>
+  <li><a href="#lost">Lost circulation</a></li>
+  <li><a href="#damage">Formation damage</a></li>
+  <li><a href="#corr">Corrosive gases</a></li>
+  <li><a href="#abn">Abnormal pressure & kicks</a></li>
+  <li><a href="#dry">Dry holes</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Chapter 16 — Drilling Problems</h1>
+<p class="why-matters" id="why">The bit does not always win. Fishing, stuck pipe, lost circulation, and kicks turn expensive rig time into NPT—and the same pit-volume and flow channels you monitor for “normal” drilling are the early-warning system. This chapter is what goes wrong and how crews respond.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Separate lithostatic vs formation (pore) pressure and why mud sits between them.</li>
+    <li>Recognize fishing tools, stuck-pipe mechanisms, and lost-circulation responses.</li>
+    <li>Read kick signatures and outline driller’s vs wait-and-weigh kill methods.</li>
+    <li>Explain dry holes in terms of petroleum-system failure, not just “bad luck.”</li>
+  </ul>
+</section>
+
+<figure class="figure">
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kick vs lost circulation signatures">
+  <rect width="560" height="240" fill="#fffcf7"/>
+  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Ops signatures: kick vs lost circulation</text>
+  <rect x="30" y="45" width="230" height="160" fill="#fce8e6" stroke="#8b3a2f" rx="4"/>
+  <text x="145" y="70" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#8b3a2f">KICK</text>
+  <text x="145" y="100" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Pits ↑  ·  flow out &gt; flow in</text>
+  <text x="145" y="125" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Pore pressure &gt; mud</text>
+  <text x="145" y="150" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Influx up the annulus</text>
+  <text x="145" y="180" text-anchor="middle" font-family="system-ui" font-size="10" fill="#8b3a2f">Shut in → kill mud</text>
+  <rect x="300" y="45" width="230" height="160" fill="#e8f0f5" stroke="#5b8fa8" rx="4"/>
+  <text x="415" y="70" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#3a6a80">LOST CIRCULATION</text>
+  <text x="415" y="100" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Pits ↓  ·  flow out &lt; flow in</text>
+  <text x="415" y="125" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Thief zone takes mud</text>
+  <text x="415" y="150" text-anchor="middle" font-family="system-ui" font-size="11" fill="#4a463c">Hydrostatic can collapse</text>
+  <text x="415" y="180" text-anchor="middle" font-family="system-ui" font-size="10" fill="#3a6a80">LCM pill or case off</text>
+  <text x="280" y="225" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Mirror images on pit volume and flow—both can escalate to well-control events</text>
+</svg>
+<figcaption>Figure: Kick and lost circulation are opposite pit/flow signatures; both threaten well control.</figcaption>
+</figure>
+
+
+<h2 id="sub">Subsurface conditions</h2>
+<ul>
+  <li><strong>Geothermal gradient:</strong> rock gets hotter with depth (~2.5 °C per 100 m in a typical basin; notes also cite ~1.4 °F/100 ft). Mud and oil return hot; steel weakens; H₂S gets more aggressive. Measured with bottomhole temperature tools or temperature logs.</li>
+  <li><strong>Lithostatic (earth) pressure:</strong> weight of the entire rock column (~100 psi per 100 ft)—compacts reservoirs over geologic time.</li>
+  <li><strong>Formation / fluid (hydrostatic) pressure:</strong> weight of water in the pores (~45 psi per 100 ft). At 10,000 ft expect ~4,500 psi. Mud must match or slightly exceed this.</li>
+</ul>
+<p>Design mud for rock stress and you fracture the formation (losses). Design short of pore pressure and you take a kick. Working point: <strong>light overbalance</strong>—a bit over hydrostatic, nowhere near lithostatic.</p>
+
+<h2 id="fish">Fishing</h2>
+<p>Something unwanted is in the hole: twisted-off string, lost tricone cone, a tool from the floor—<strong>fish / junk</strong>. A normal bit will not “eat” it cleanly. Rig keeps charging while ROP is zero—hence fishing insurance.</p>
+<ul>
+  <li><strong>Spear</strong> — expands inside the fish ID.</li>
+  <li><strong>Overshot</strong> — bell that grabs the OD (classic for standing pipe).</li>
+  <li><strong>Washover / washpipe</strong> — larger pipe clears debris around the fish and dresses the top.</li>
+  <li><strong>Tapered mill</strong> — opens crushed casing or odd shapes.</li>
+  <li><strong>Junk mill + boot basket</strong> — grind to chips; catch them.</li>
+  <li><strong>Wireline spear / magnet</strong> — cable or small magnetic junk.</li>
+  <li><strong>Impression block</strong> — lead/wax “photo” of the fish top before choosing a tool.</li>
+  <li><strong>Jar</strong> — impact up or down—first try before cutting anything.</li>
+</ul>
+
+<h2 id="stuck">Stuck pipe</h2>
+<ul>
+  <li><strong>Differential wall sticking:</strong> overbalance presses pipe into mud cake like a suction cup on a straight wall—not a dogleg jam. Try jars, spotting oil/surfactant fluid, or lowering mud weight; spiral collars reduce contact area.</li>
+  <li><strong>Mechanical — dogleg / keyseat:</strong> hole turns &gt;~3°/100 ft (hard dipping beds or sudden WOB changes). Slim pipe cuts a narrow groove; collars will not fit on the way out. Ream to enlarge.</li>
+  <li><strong>Ledges:</strong> hard/soft interbeds; soft washes out, hard rings catch tool joints.</li>
+  <li><strong>Stuck-point log</strong> finds the free point. <strong>Back-off</strong> cuts above the stuck point (explosive while unscrewing, or chemical cutter); recover free pipe; wash over the rest—sometimes cheaper than days of jarring.</li>
+</ul>
+
+<h2 id="slough">Sloughing shale</h2>
+<p>Compacted clay. Freshwater mud lets clay absorb water, swell, and ball into the hole—plugs shakers and sticks pipe. Potassium salts or oil-based mud reduce water uptake.</p>
+
+<h2 id="lost">Lost circulation</h2>
+<p>A <strong>thief zone</strong> (caves, open fractures, ultra-porous sand) swallows mud. Hydrostatic column drops → you can go from losses to kick if a deeper zone is live. First try a lost-circulation <strong>pill</strong> (fibers, mica, rubber, chips) to bridge fractures. Severe losses → case and cement a protection string before continuing. Data signature: pits fall, flow out &lt; flow in, SPP may drop—the mirror of a kick.</p>
+
+<h2 id="damage">Formation damage (skin)</h2>
+<p>The same overbalance that prevents kicks drives filtrate and fines a few inches into pay and plugs permeability next to the wellbore—<strong>skin</strong>. Far-field reservoir may be fine; near-casing will not flow. Remediate later with acid or frac; prevent with brine/synthetic mud or <strong>underbalanced</strong> drilling (rotating control head). Underbalance is not free: formation fluid can enter; before trips you must kill with heavy mud.</p>
+
+<h2 id="corr">Corrosive gases</h2>
+<p>CO₂ and especially <strong>H₂S</strong> embrittle steel—yesterday’s torque capacity becomes today’s twist-off. Fight with specialty steel and scavenger chemicals in mud. Sour is integrity, not only price.</p>
+
+<h2 id="abn">Abnormal high pressure and kicks</h2>
+<p>Pore pressure much higher than normal hydrostatic at that depth (sometimes ~2×). Mud designed for “normal” loses—the influx is a <strong>kick</strong>; uncontrolled to surface is a <strong>blowout</strong>.</p>
+<p>Why: large reservoirs compact and bleed water (stay hydrostatic). Small sealed compartments cannot bleed—overburden transfers onto the fluid (“trapped” pressure).</p>
+<p>Feedback: influx cuts mud weight (gas-cut, water-cut, oil-cut) → column lighter → more influx. Do not wait on a small kick.</p>
+<p><strong>Early signs (ops data):</strong> flow out &gt; flow in; pits rise (pit-volume totalizer); sudden mud weight/temperature/resistivity change; drilling break in undercompacted shale (easy ROP = pores still overpressured). Kick rises in the <strong>annulus</strong>—hence annular and pipe rams.</p>
+<p><strong>Kill:</strong> shut BOPs; circulate heavier kill mud via kill line; control returns on the choke.</p>
+<ul>
+  <li><strong>Driller’s method:</strong> kill mud already mixed—first circulation removes cut mud with original weight; second replaces with kill weight. Starts faster.</li>
+  <li><strong>Wait-and-weigh:</strong> mix kill mud while shut in; one slow circulation removes kick + original and leaves kill mud. Fewer circulations, longer shut-in.</li>
+</ul>
+<p>After a kick, drill the zone and set <strong>protection casing</strong>. ~Half of blowouts tie to trips: pulling pipe lowers mud level (displace volume)—use a <strong>trip tank</strong> to keep hole full; swabbing from pulling too fast can suck gas in. BOP drills exist so crews shut in from memory.</p>
+
+<h2 id="dry">Dry holes</h2>
+<p>Drilled, logged, tested—no commercial volumes. P&amp;A with cement. “Dry” can still mean some oil that does not pay the well. Success rates are high for development wells and much lower for new-field wildcats. Famous seismic lookalikes can still fail if seal leaked or the trap formed <strong>after</strong> migration (Ch 9 timing). Perfect WITSML does not rescue a dead petroleum system.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li>Kick: pit gain, flow out &gt; flow in; lost circ: pit drop, flow out &lt; flow in.</li>
+  <li>SPP, mud weight, and ROP breaks are time-log channels—pair with rig state.</li>
+  <li>Fishing/sidetrack may create a new <code>wellbore</code> while keeping the same <code>well</code>.</li>
+  <li>Stuck-point and fishing reports are events/NPT—not curve mnemonics.</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>Why must mud pressure sit between pore pressure and lithostatic pressure?</li>
+<li>How does differential sticking differ from a keyseat?</li>
+<li>What data pattern distinguishes lost circulation from a kick?</li>
+<li>Outline driller’s method vs wait-and-weigh.</li>
+<li>Why do many blowouts happen on trips?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Below pore pressure → kick; near/above fracture (toward lithostatic) → losses.</li>
+<li>Differential: suction into cake on a straight wall. Keyseat: collars jam in a groove cut by pipe in a dogleg.</li>
+<li>Lost circ: pits down, flow out low. Kick: pits up, flow out high.</li>
+<li>Driller’s: two circulations, kill mud ready. Wait-and-weigh: mix while shut in, one kill circulation.</li>
+<li>Pulling pipe drops mud level / can swab—underbalance if not kept full with a trip tank.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Fish / junk</dt><dd>Lost metal or debris in the hole.</dd>
+<dt>Differential sticking</dt><dd>Pipe sucked into mud cake by overbalance.</dd>
+<dt>Keyseat</dt><dd>Narrow groove in a dogleg that traps collars.</dd>
+<dt>Thief zone</dt><dd>Interval that takes mud (lost circulation).</dd>
+<dt>Skin</dt><dd>Near-wellbore permeability damage.</dd>
+<dt>Kick / blowout</dt><dd>Influx; uncontrolled surface flow.</dd>
+<dt>Kill mud</dt><dd>Heavier mud circulated to regain overbalance.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch15.html"><span class="label">Previous</span>Ch 15 · Drilling Mechanics</a><a class="next" href="ch17.html"><span class="label">Next</span>Ch 17 · Drilling Techniques</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
