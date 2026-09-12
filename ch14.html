@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 14 Drilling Preliminaries — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#land">Land & leasing</a></li>
+  <li><a href="#foreign">Foreign contracts</a></li>
+  <li><a href="#afe">AFE & economics</a></li>
+  <li><a href="#contracts">Drilling contracts</a></li>
+  <li><a href="#joa">JOA & support</a></li>
+  <li><a href="#site">Site preparation</a></li>
+  <li><a href="#types">Types of wells</a></li>
+  <li><a href="#regs">Regulations</a></li>
+  <li><a href="#cable">Cable tool note</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Chapter 14 — Drilling Preliminaries</h1>
+<p class="why-matters" id="why">Before the bit turns, someone picks a target, secures rights, budgets the well, and signs contracts. This chapter is the business and planning layer that turns a geologic idea into a spud date—and into the well identity you will later see in data systems.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Explain fee land mineral vs surface rights, leases, royalty, and working interest.</li>
+    <li>Contrast concession, PSC, and service-style foreign contracts.</li>
+    <li>Read what an AFE covers and how risk-adjusted ROI / payout / IRR screen prospects.</li>
+    <li>Distinguish footage, daywork, and turnkey drilling contracts; list well-type labels (wildcat → infill).</li>
+  </ul>
+</section>
+
+<figure class="figure">
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exploratory vs development wells">
+  <rect width="560" height="220" fill="#fffcf7"/>
+  <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">From wildcat to infill</text>
+  <circle cx="80" cy="100" r="8" fill="#8b3a2f"/>
+  <text x="80" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#8b3a2f">Rank wildcat</text>
+  <text x="80" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#7a7366">≥2 mi from prod.</text>
+  <path d="M100 100 L160 100" stroke="#c4922a" stroke-width="2" marker-end="url(#ar)"/>
+  <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c4922a"/></marker></defs>
+  <circle cx="190" cy="100" r="10" fill="#c4922a"/>
+  <text x="190" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a5a10">Discovery</text>
+  <path d="M210 100 L270 80 M210 100 L270 120" stroke="#0d5c63" stroke-width="2"/>
+  <circle cx="290" cy="80" r="7" fill="#0d5c63"/>
+  <circle cx="290" cy="120" r="7" fill="#0d5c63"/>
+  <text x="290" y="155" text-anchor="middle" font-family="system-ui" font-size="10" fill="#084248">Appraisal / step-outs</text>
+  <ellipse cx="420" cy="100" rx="70" ry="45" fill="#d4e8ea" stroke="#0d5c63"/>
+  <circle cx="400" cy="90" r="5" fill="#2d6a4f"/>
+  <circle cx="430" cy="100" r="5" fill="#2d6a4f"/>
+  <circle cx="415" cy="115" r="5" fill="#2d6a4f"/>
+  <circle cx="445" cy="85" r="5" fill="#2d6a4f"/>
+  <text x="420" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#084248">Development + infill</text>
+  <text x="280" y="205" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Risk falls as the field is proven; AFE × chance of success uses these labels</text>
+</svg>
+<figcaption>Figure: Well-type progression—rank wildcat → discovery → appraisal → development/infill.</figcaption>
+</figure>
+
+
+<h2 id="land">Land and leasing</h2>
+<p>In the USA and parts of Canada, private <strong>fee land</strong> often splits <strong>surface rights</strong> (farm, house) from <strong>mineral rights</strong> (explore, drill, own oil/gas). They need not be the same owner. Elsewhere, minerals usually belong to the state. Roughly one-third of US land is public (federal/state); in Canada, state land is <strong>crown land</strong>.</p>
+<p>A <strong>landman</strong> finds mineral owners (county records, title companies, lease maps, attorney title opinions) and gets a <strong>lease</strong>: right to explore and drill while the lease lives. The owner (<strong>lessor</strong>) receives a <strong>bonus</strong> at signing and a <strong>royalty</strong> (fraction of gross oil/gas, no production costs—historically 1/8, often higher today). The company (<strong>lessee</strong>) holds a <strong>primary term</strong> (often 1–5 years). Without commercial production “in paying quantities” by the end, the lease expires; with it, a <strong>secondary term</strong> lasts for the life of production.</p>
+<p>Lease forms may include <strong>delay rental</strong> (pay each year of primary term if not spudded, or lose the lease) or <strong>paid-up</strong> (no delay rental). Leases are property—bought, sold, traded. <strong>Farm out</strong>: pass the lease to another company that will drill, for royalty or other consideration; what you receive is a <strong>farm in</strong>.</p>
+<p>On a producing well: <strong>royalty interest</strong> (gross fraction, no costs—landowner royalty, sometimes overriding royalties carved from working interest) vs <strong>working interest</strong> (pays to drill and operate; keeps what remains after royalties and opex). After all royalties, <strong>net revenue interest</strong> remains (e.g., 87.5%). At completion the operator issues a <strong>division order</strong> (who gets paid what %).</p>
+
+<h2 id="foreign">Foreign contracts</h2>
+<p><strong>Multinational / international</strong> companies operate in many countries; <strong>national / host</strong> companies usually stay in one. Phases: exploration (geology, geochem, seismic, wildcats), exploitation (develop the new field), production. Contracts cover a <strong>concession</strong> area for a contract term.</p>
+<ul>
+  <li><strong>Concession / license / tax and royalty:</strong> company takes cost and risk; country takes bonus, taxes, royalties. Variant: company explores alone; host shares exploitation cost/risk.</li>
+  <li><strong>Production-sharing contract (common today):</strong> company explores/drills at its cost. No commercial by contract end → contract dies, costs lost. If commercial: <strong>cost oil</strong> recovers exploration/drilling/production costs; remaining <strong>profit oil</strong> splits by formula.</li>
+  <li><strong>Service contract:</strong> fee for a service (explore or produce).</li>
+  <li><strong>Production contract:</strong> improve an existing or weak field; keep a % of the incremental oil.</li>
+</ul>
+
+<h2 id="afe">Authority for Expenditure and economics</h2>
+<p>An <strong>AFE</strong> estimates well cost as dry hole and as producer: drilling intangibles, completion intangibles, and equipment. Intangibles = wages, services, and items with little salvage. Includes rig, mud, logs, tests, cement, casing, stimulation, pumps, tubing, separator, etc. Operator and funding parties sign it; it guides spending. Overruns happen—famous wells have blown far past initial AFE.</p>
+<p>Two numbers dominate screening: <strong>risk</strong> and <strong>reserves</strong>. Chance of success (e.g., 0.65) comes from area history and well type, or from geo assessment of reservoir + seal + trap. Reserves estimate how much that well can produce.</p>
+<ul>
+  <li><strong>ROI:</strong> net revenue / peak capital for drill &amp; complete, discounted because revenue arrives later. ROI × chance of success = risk-adjusted ROI.</li>
+  <li><strong>Payout (PO):</strong> time until net revenue equals spend (also discounted).</li>
+  <li><strong>IRR:</strong> discount rate that equates life-of-well net revenue to drill/complete cost. Many firms set a minimum IRR hurdle.</li>
+</ul>
+<p>Best prospects: high risk-adjusted ROI and short discounted payout.</p>
+
+<h2 id="contracts">Drilling contracts</h2>
+<p>A <strong>drilling contractor</strong> owns the rig. The contract sets depth or horizon (drilling target), location, spud date, hole sizes, max deviation from vertical, mud, logs/tests, casing sizes and depths, cement, completion style, collars, formations—and standby/logging rates when not drilling.</p>
+<ul>
+  <li><strong>Footage:</strong> $/ft to contract depth (typical onshore).</li>
+  <li><strong>Daywork:</strong> $/day (typical offshore).</li>
+  <li><strong>Turnkey:</strong> fixed price to depth; sometimes includes complete/equip per tests.</li>
+  <li><strong>Combination:</strong> footage to X, daywork below.</li>
+</ul>
+<p>Forms often follow API/AAODC styles. <strong>Service company</strong> = one service (wireline, mud); <strong>supply company</strong> = hardware (casing).</p>
+
+<h2 id="joa">JOA and support agreements</h2>
+<p>A <strong>JOA</strong> (joint operating agreement) splits a well or area’s working interest: rights, cost %, who is <strong>operator</strong> (day-to-day), and how production is shared.</p>
+<p>Support / contribution agreements:</p>
+<ul>
+  <li><strong>Dry-hole:</strong> pay if dry; get geologic/drilling data either way.</li>
+  <li><strong>Bottom-hole contribution:</strong> pay if a depth is reached; get data.</li>
+  <li><strong>Acreage contribution:</strong> contribute leases/interests for data.</li>
+</ul>
+
+<h2 id="site">Site preparation</h2>
+<p>A surveyor stakes exact location and elevation; plat is filed. Dozer builds road, turnaround, and a ~4–6 acre pad (often gravel; wet sites use matting). Lined <strong>reserve pit</strong> holds excess mud, cuttings, waste. Water from a water well or pipeline.</p>
+<p>Deeper wells need rigs that can rack more pipe. Each rig has a <strong>maximum depth rating</strong>. Shallow: truck-mounted. Deeper: trailer modules. Very deep: <strong>cellar</strong> under the floor for BOPs. Remote: helirig. Assemble = <strong>rig up</strong>; tear down = <strong>rig down</strong>.</p>
+<p><strong>Spudding in</strong> starts the well. Medium/deep wells often use a small truck rig for a <strong>conductor hole</strong> (tens of feet) and cement large <strong>conductor casing</strong>—supports the wellhead and anchors BOPs if shallow gas appears. Soft ground may allow pile-driving conductor without drilling.</p>
+
+<h2 id="types">Types of wells</h2>
+<ul>
+  <li><strong>Wildcat / exploratory</strong> — seeks a new reservoir.
+    <ul>
+      <li>New-field exploratory — no production in the area.</li>
+      <li>New-pool exploratory — another unproduced layer in a producing area (shallower or deeper pool test).</li>
+      <li>Outpost / extension / step-out — significantly extends field or reservoir limits.</li>
+    </ul>
+  </li>
+  <li><strong>Rank wildcat</strong> — ≥ ~2 miles (3 km) from known production.</li>
+  <li>Discovery well — finds a field.</li>
+</ul>
+<p>After discovery, <strong>delineation / appraisal / step-out</strong> wells size the field (and decide which leases to keep). Hitting OWC or GWC on multiple sides outlines area. <strong>Developmental</strong> wells sit inside a known field; <strong>infill</strong> wells between producers raise rate.</p>
+
+<h2 id="regs">Government regulations (spacing)</h2>
+<p>Modern rules assign a <strong>DSU</strong> (drilling and spacing unit)—typically one completed well per square/rectangle. Oil DSUs often 10, 20, or 40 acres (smaller if viscous oil or low perm). Gas drains farther—640-acre units are common. Wells need not be centered but cannot sit on the boundary. An <strong>allowable</strong> may cap oil/gas a well or field can produce in a period.</p>
+
+<h2 id="cable">Cable-tool note</h2>
+<p>Early commercial US wells used <strong>cable tool</strong>: a chisel bit on a rope pounded by a walking beam; bail cuttings every few feet. Very slow, poor pressure control, blowouts common. Rotary largely replaced it for speed. For modern WITSML/time-log workflows (circulating mud, ROP, SPP), cable tool is not the model.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li>Spud creates the <code>well</code>; each hole path is a <code>wellbore</code> (original, sidetrack, relief).</li>
+  <li>Well type (wildcat, development, appraisal) is metadata—useful for risk and analytics, not a log curve.</li>
+  <li>AFE and JOA live in financial/land systems; link by well identifier.</li>
+  <li>Location/elevation from survey become well header fields (KB, GL, coordinates).</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>What is the difference between royalty interest and working interest?</li>
+<li>In a PSC, what are cost oil and profit oil?</li>
+<li>What does an AFE estimate, and why list dry-hole and producer cases?</li>
+<li>Footage vs daywork vs turnkey—when is each typical?</li>
+<li>What is a rank wildcat versus a developmental well?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Royalty: share of gross, no costs. Working interest: pays drill/operate costs; keeps remainder after royalties.</li>
+<li>Cost oil recovers company costs from gross; profit oil is the remainder split by contract.</li>
+<li>Well cost; dry vs producer paths differ (no completion/equip vs full cost).</li>
+<li>Footage $/ft onshore; daywork $/day offshore; turnkey fixed price to depth.</li>
+<li>Rank wildcat: far from known production. Developmental: inside a known field.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Lease / bonus / royalty</dt><dd>Right to drill; signing money; cost-free production share.</dd>
+<dt>Working interest</dt><dd>Cost-bearing share of a well/field.</dd>
+<dt>AFE</dt><dd>Authority for Expenditure—approved well cost estimate.</dd>
+<dt>JOA</dt><dd>Joint operating agreement among working-interest owners.</dd>
+<dt>Wildcat</dt><dd>Exploratory well for a new reservoir.</dd>
+<dt>DSU</dt><dd>Drilling and spacing unit—legal well density.</dd>
+<dt>Spud</dt><dd>Start of drilling the well.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch11.html"><span class="label">Previous</span>Ch 11 · Petroleum Traps</a><a class="next" href="ch15.html"><span class="label">Next</span>Ch 15 · Drilling Mechanics</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
