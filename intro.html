@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introduction — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#sold">What is sold</a></li>
+  <li><a href="#three">Three conditions</a></li>
+  <li><a href="#basins">Where it lives</a></li>
+  <li><a href="#generation">Generation windows</a></li>
+  <li><a href="#migration">Migration & traps</a></li>
+  <li><a href="#finding">Finding & drilling</a></li>
+  <li><a href="#logs">Logs & completion</a></li>
+  <li><a href="#surface">Surface & recovery</a></li>
+  <li><a href="#check">Check yourself</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+  
+<h1>Introduction</h1>
+<p class="why-matters" id="why">Petroleum is not one product—it is a system. This chapter maps what companies sell, what must exist underground for a commercial field, and how drilling, logging, and production fit together. If you work with well data, these are the nouns everything else hangs on.</p>
+
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Name the three geologic conditions required for a commercial oil or gas field.</li>
+    <li>Explain oil vs gas generation windows in terms of temperature (and why TVD matters, not MD).</li>
+    <li>Describe how buoyancy drives migration and how fluids stack under a seal.</li>
+    <li>Distinguish mud log, wireline log, and what “log” means as data vs as a tool.</li>
+    <li>Sketch the rotary circulating path and why mud can hide a reservoir until you log.</li>
+  </ul>
+</section>
+
+<h2 id="sold">What is sold</h2>
+<p><strong>Crude oil</strong> is the black liquid that goes to a refinery (gasoline, lubricants, and many other cuts). <strong>Natural gas</strong> is colorless and odorless; it is measured by volume (Mcf and multiples) and by heat content (Btu), and it is burned. Crudes range from <strong>heavy</strong> (viscous, harder to produce, usually less valuable) to <strong>light</strong> (flow easily, more naphtha, usually worth more).</p>
+<p>Some gases carry <strong>condensate</strong>—a near-naphtha liquid that drops out at surface conditions and prices almost like oil. Sulfur is a problem: <strong>sour</strong> crude and gas with hydrogen sulfide (H₂S) sell for less and demand special handling.</p>
+
+<h2 id="three">The three conditions</h2>
+<p>If any one is missing, there is no field:</p>
+<ol>
+  <li><strong>Source rock</strong> that generated oil and/or gas at some time.</li>
+  <li><strong>Reservoir rock</strong>—a separate porous, permeable layer that can store fluid and deliver it to a well.</li>
+  <li><strong>Trap</strong> above that layer so commercial volumes accumulate—plus a <strong>seal (caprock)</strong>. Without a seal, hydrocarbons leak to surface as seeps.</li>
+</ol>
+
+<figure class="figure">
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Petroleum system: source to trap">
+  <rect width="640" height="280" fill="#fffcf7"/>
+  <!-- layers -->
+  <rect x="40" y="40" width="560" height="36" fill="#c4b8a0" stroke="#4a463c" stroke-width="1"/>
+  <text x="50" y="63" font-family="system-ui" font-size="12" fill="#1a1a18">Caprock / seal (shale or salt)</text>
+  <rect x="40" y="76" width="560" height="50" fill="#d4e8ea" stroke="#0d5c63" stroke-width="1.5"/>
+  <text x="50" y="98" font-family="system-ui" font-size="12" fill="#084248" font-weight="700">Reservoir rock (porous &amp; permeable)</text>
+  <text x="50" y="116" font-family="system-ui" font-size="11" fill="#0d5c63">gas cap · oil · water — stacked by density under the seal</text>
+  <path d="M 80 126 L 200 180 L 280 160 L 400 210 L 520 170 L 600 200" fill="none" stroke="#c4922a" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="300" y="155" font-family="system-ui" font-size="11" fill="#c4922a" font-weight="600">↑ migration (buoyancy)</text>
+  <rect x="40" y="210" width="200" height="44" fill="#3d3a32" stroke="#1a1a18" stroke-width="1"/>
+  <text x="50" y="237" font-family="system-ui" font-size="12" fill="#f6f1e8">Source rock (black shale)</text>
+  <rect x="280" y="210" width="320" height="44" fill="#ebe4d6" stroke="#7a7366" stroke-width="1"/>
+  <text x="290" y="237" font-family="system-ui" font-size="12" fill="#4a463c">Carrier beds / fractures / faults</text>
+  <!-- arrows -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c4922a"/></marker>
+  </defs>
+  <path d="M140 210 L140 126" stroke="#c4922a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="40" y="270" font-family="system-ui" font-size="11" fill="#7a7366">Petroleum system: source → generation → migration → reservoir + trap + seal</text>
+</svg>
+<figcaption>Figure: The petroleum system chain. Without any one link (source, reservoir, trap/seal), there is no commercial field.</figcaption>
+</figure>
+
+
+<h2 id="basins">Where it lives</h2>
+<p>Hydrocarbons sit in <strong>sedimentary basins</strong>—layered sand, mud, shells, and salts. Think beach sand → sandstone; mud → shale; shells → limestone. Those are the rocks you drill.</p>
+
+<h2 id="generation">Where hydrocarbons come from</h2>
+<p>Buried organic matter cooks with temperature and time. The most common source is <strong>black shale</strong> (organic mud from oxygen-poor seafloors). In a typical geothermal gradient:</p>
+<ul>
+  <li>Oil generation begins around <strong>~65 °C</strong> (about <strong>~2,130 m</strong> TVD in that model).</li>
+  <li>Oil keeps generating up to about <strong>~150 °C</strong> (about <strong>~5,500 m</strong> TVD).</li>
+  <li>Hotter / deeper → thermogenic <strong>gas</strong>; remaining oil can crack to gas + graphite.</li>
+</ul>
+<p>So there is an <strong>oil window</strong> and, deeper, a <strong>gas window</strong>. These are <em>temperature</em> ranges, not a universal “oil at X meters” law. A hot basin pushes the window shallower; a cold basin pushes it deeper. Condensate often appears when fluid leaves a hot system and liquefies at surface.</p>
+<aside class="callout callout-note"><p class="label">Caveat</p><p>Meter values in textbooks assume a typical gradient. What rules is °C. For “am I in the window?” use <strong>TVD</strong>, never measured depth from a directional well.</p></aside>
+
+<figure class="figure">
+<svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oil window vs gas window by temperature">
+  <rect width="560" height="340" fill="#fffcf7"/>
+  <text x="280" y="28" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="700" fill="#084248">Oil window vs gas window (temperature rules)</text>
+  <!-- depth axis -->
+  <line x1="100" y1="50" x2="100" y2="300" stroke="#1a1a18" stroke-width="2"/>
+  <text x="50" y="55" font-family="system-ui" font-size="10" fill="#7a7366">TVD</text>
+  <text x="30" y="80" font-family="system-ui" font-size="10" fill="#4a463c">~0 m</text>
+  <text x="20" y="150" font-family="system-ui" font-size="10" fill="#4a463c">~2130 m</text>
+  <text x="20" y="250" font-family="system-ui" font-size="10" fill="#4a463c">~5500 m</text>
+  <!-- zones -->
+  <rect x="110" y="55" width="320" height="70" fill="#ebe4d6" stroke="#7a7366"/>
+  <text x="270" y="85" text-anchor="middle" font-family="system-ui" font-size="12" fill="#4a463c">Immature / biogenic zone</text>
+  <text x="270" y="105" text-anchor="middle" font-family="system-ui" font-size="11" fill="#7a7366">&lt; ~65 °C — organic matter not yet cooked to oil</text>
+  <rect x="110" y="125" width="320" height="100" fill="#d4e8ea" stroke="#0d5c63" stroke-width="2"/>
+  <text x="270" y="160" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">OIL WINDOW</text>
+  <text x="270" y="180" text-anchor="middle" font-family="system-ui" font-size="11" fill="#0d5c63">~65–150 °C  ·  typical ~2130–5500 m TVD</text>
+  <text x="270" y="200" text-anchor="middle" font-family="system-ui" font-size="11" fill="#0d5c63">(assuming a normal geothermal gradient)</text>
+  <rect x="110" y="225" width="320" height="70" fill="#3d3a32" stroke="#1a1a18"/>
+  <text x="270" y="255" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#f6f1e8">GAS WINDOW</text>
+  <text x="270" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#d4e8ea">&gt; ~150 °C — thermogenic gas; oil cracks to gas + graphite</text>
+  <text x="100" y="325" font-family="system-ui" font-size="10" fill="#8b3a2f">⚠ Depths are illustrative for a typical gradient. Hot basins → shallower window. Use TVD (°C), never MD.</text>
+</svg>
+<figcaption>Figure: Generation windows are temperature ranges. Meter values assume a typical geothermal gradient; cold or hot basins shift them.</figcaption>
+</figure>
+
+
+<h2 id="migration">Why it rises — migration, porosity, traps</h2>
+<p>Oil and gas are lighter than formation water, so they migrate upward through fractures and, once in a reservoir layer, pore-to-pore <strong>updip</strong>. They can end far—vertically and on the map—from where they were generated. Ease of flow is <strong>permeability</strong>; void space is <strong>porosity</strong> (often ~10–30% in good reservoirs).</p>
+<p>A <strong>trap</strong> is a high point (anticline, dome, or other geometry) where migration stops. Fluids separate by density: <strong>free gas cap</strong> on top, oil in the middle, water below—held by impermeable <strong>caprock</strong> (typically shale or salt).</p>
+
+<figure class="figure">
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Density stack under a seal">
+  <rect width="420" height="300" fill="#fffcf7"/>
+  <text x="210" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#084248">Fluid density stack under a seal</text>
+  <path d="M60 50 Q210 20 360 50 L360 70 Q210 45 60 70 Z" fill="#c4b8a0" stroke="#4a463c"/>
+  <text x="210" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a18">Caprock</text>
+  <ellipse cx="210" cy="100" rx="140" ry="28" fill="#f3e6c8" stroke="#c4922a" stroke-width="1.5"/>
+  <text x="210" y="105" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#7a5a10">Free gas cap</text>
+  <path d="M70 125 Q210 115 350 125 L340 175 Q210 185 80 175 Z" fill="#2d6a4f" stroke="#1a1a18"/>
+  <text x="210" y="155" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#fff">Oil column</text>
+  <path d="M80 175 Q210 185 340 175 L330 250 Q210 265 90 250 Z" fill="#5b8fa8" stroke="#1a1a18"/>
+  <text x="210" y="220" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#fff">Formation water</text>
+  <line x1="360" y1="125" x2="400" y2="125" stroke="#0d5c63" stroke-width="1"/>
+  <text x="365" y="120" font-family="system-ui" font-size="9" fill="#0d5c63">GOC</text>
+  <line x1="350" y1="175" x2="400" y2="175" stroke="#0d5c63" stroke-width="1"/>
+  <text x="365" y="170" font-family="system-ui" font-size="9" fill="#0d5c63">OWC</text>
+  <text x="210" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7a7366">Contacts are usually near-horizontal. Crest = highest point of the trap.</text>
+</svg>
+<figcaption>Figure: Buoyancy sorts fluids—gas on top, oil in the middle, water below—held by impermeable caprock.</figcaption>
+</figure>
+
+
+<h2 id="finding">Finding and drilling</h2>
+<p>Exploration uses outcrops projected to the subsurface, well-to-well correlation, structure and isopach maps, and especially <strong>seismic</strong> (surface energy reflects from layers so you can see trap shape). Only a <strong>wildcat</strong> proves commercial hydrocarbons—and many wildcats are dry holes.</p>
+<p><strong>Rotary drilling:</strong> a <strong>drillstring</strong> (pipe + bit) rotates and cuts. Roughly every ~9 m (30 ft) you add a joint. The mast/derrick raises and lowers the string. <strong>Mud</strong> (usually bentonite clay + water) goes down inside the pipe, out bit nozzles, and up the annulus: it lifts <strong>cuttings</strong>, supports the hole, and its weight keeps formation fluids out. If fluids reach the floor you risk fire or blowout; if water invades badly, the hole can collapse. Wells may be vertical, directional, or horizontal—horizontals often produce more because they contact more reservoir.</p>
+<p>Mud’s overbalance also <em>hides</em> the reservoir: you can drill through oil or gas and see nothing at surface. That is why you <strong>log</strong> afterward (or while drilling).</p>
+
+<h2 id="logs">Logs, completion, surface</h2>
+<p>A <strong>well log</strong> is a <em>record</em>—curves or a report of rock type, porosity, and fluids vs depth—not the tool itself. Types include mud log, lithologic/sample log, wireline, and MWD/LWD.</p>
+<ul>
+  <li><strong>Mud log:</strong> built while drilling from mud and cuttings (gas, oil stain, lithology). Not on wireline.</li>
+  <li><strong>Wireline log:</strong> after drilling (or on a trip), a truck runs a logging tool on cable measuring electrical, acoustic, or nuclear properties—clean curves vs depth.</li>
+</ul>
+<p><strong>Completion:</strong> run <strong>casing</strong>, cement the annulus (<strong>cement job</strong>), often in stages (casing program: drill, case, deepen, smaller casing). Produce via <strong>open hole</strong> (casing to top of pay, open below) or <strong>perforated casing</strong> (shots through casing into the reservoir). Production fluid usually rises in slim <strong>tubing</strong>; a <strong>packer</strong> seals the tubing–casing annulus.</p>
+
+<h2 id="surface">Surface facilities and life of a field</h2>
+<p>If the well flows (gas, or oil early on), valves sit on a <strong>Christmas tree</strong>. Most oil wells need artificial lift—classically a <strong>sucker-rod / beam pump</strong> (“horsehead”). Gas is treated (water, corrosives, valuable liquids) then sold to pipeline. Oil goes through a <strong>separator</strong> (gas off, brine down) into <strong>stock tanks</strong>.</p>
+<p><strong>Acid</strong> can dissolve near-wellbore rock damage; <strong>frac</strong> pumps fluid until the rock cracks and leaves <strong>proppant</strong> so the fracture stays open. In shale, matrix permeability is essentially zero—horizontal wells plus slickwater frac make production possible.</p>
+<p>Pressure falls over time along a <strong>decline curve</strong>. Rough recoveries often cited: ~80% of gas in place vs ~35% average for oil (wide range). Remaining oil may need <strong>waterflood</strong> or EOR (CO₂, N₂, steam). End of life: <strong>plug and abandon</strong>—cement to seal reservoirs and protect aquifers, welded plate, soil on top.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  
+<ul>
+  <li><code>well</code> — the surface location / well identity; may have several <code>wellbore</code>s (original hole, sidetracks).</li>
+  <li><code>trajectory</code> — surveys → MD, inclination, azimuth, and computed TVD.</li>
+  <li><code>log</code> / <code>mudLog</code> — depth-indexed curves or cuttings/gas shows; channels like GR, Res, porosity, ROP.</li>
+  <li>Porosity and water saturation (<code>Sw</code>) are typically columns on a interpreted log, not “the well” itself.</li>
+  <li>Oil-window questions → use TVD (and temperature if available), never raw MD on a lateral.</li>
+</ul>
+
+</aside>
+
+<section class="check" id="check">
+  <h2>Check yourself</h2>
+  <ol>
+  <li>Name the three conditions required for a commercial field.</li>
+<li>Why can textbook “oil window depths” mislead on a hot basin or a horizontal well?</li>
+<li>How do free gas, oil, and water arrange under a seal—and what happens without caprock?</li>
+<li>What is the difference between a mud log and a wireline log?</li>
+<li>Why might you drill through pay and see nothing at surface until you log?</li>
+  </ol>
+  <details>
+    <summary>Show answers</summary>
+    <div class="answers">
+    <ol>
+<li>Source rock, reservoir rock, and trap (with seal).</li>
+<li>Windows are temperature ranges; hot basins shift them shallower. MD ≠ TVD—use TVD for window/pressure logic.</li>
+<li>Gas on top, oil middle, water below. Without seal → seep / empty trap.</li>
+<li>Mud log: while drilling from mud/cuttings. Wireline: tool on cable after (or during a trip), curves vs depth.</li>
+<li>Mud overbalance keeps formation fluids in the rock; shows and logs reveal what the mud hid.</li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Source rock</dt><dd>Rock that can generate oil/gas from organic matter (often black shale).</dd>
+<dt>Reservoir rock</dt><dd>Porous and permeable rock that stores and transmits hydrocarbons.</dd>
+<dt>Trap / caprock</dt><dd>Geometry that accumulates HC; impermeable seal that prevents leakage.</dd>
+<dt>Oil / gas window</dt><dd>Temperature ranges for oil vs thermogenic gas generation.</dd>
+<dt>Porosity / permeability</dt><dd>Void fraction vs ease of flow (pore throats matter).</dd>
+<dt>Wildcat</dt><dd>Exploratory well seeking a new reservoir; many are dry.</dd>
+<dt>Well log</dt><dd>A depth-indexed record of rock/fluid properties—not the tool itself.</dd>
+  </dl>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="next" href="ch01.html"><span class="label">Next</span>Ch 1 · The Nature of Gas and Oil</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Diagrams are original. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
