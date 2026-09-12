@@ -34,10 +34,12 @@ No figures were copied from Hyne / PennWell / geokniga.
 
 ## `drill-bit.jpg`
 
-- **License:** CC BY-SA 3.0
-- **Author:** Kati Vald
-- **Source:** https://commons.wikimedia.org/wiki/File:Drill_bit.jpg
+- **License:** Public domain (USGS)
+- **Author:** USGS
+- **Source:** https://commons.wikimedia.org/wiki/File:Drill_bit_tricone_worn.jpg
 - **Used in:** ch15, ch16, ch18
+- **Notes:** Replaced mislabeled container-ship photo with a real worn tricone bit.
+
 
 ## `drill-core.jpg`
 
@@ -104,10 +106,12 @@ No figures were copied from Hyne / PennWell / geokniga.
 
 ## `oil-drilling-rig.jpg`
 
-- **License:** CC BY-SA 4.0
-- **Author:** Emengich
-- **Source:** https://commons.wikimedia.org/wiki/File:Oil_drilling_rig.jpg
+- **License:** CC BY 2.0
+- **Author:** Lindsey G (Flickr / Lindsey Gira)
+- **Source:** https://commons.wikimedia.org/wiki/File:Williston_North_Dakota_Oil_Field_Oil_Rig_(5894015279).jpg
 - **Used in:** intro, ch14, ch15, ch16, ch17, ch18
+- **Notes:** Replaced truck+trailer transport photo with standing Nabors onshore rotary rig (Williston Basin). Interactive hotspots on intro, ch15, ch17.
+
 
 ## `oil-platform.jpg`
 
@@ -128,7 +132,7 @@ No figures were copied from Hyne / PennWell / geokniga.
 - **License:** CC BY-SA 3.0
 - **Author:** Woudloper (MagentaGreen)
 - **Source:** https://commons.wikimedia.org/wiki/File:Oil_traps.svg
-- **Used in:** intro, ch09, ch11
+- **Used in:** intro, ch09, ch11 (interactive hotspots)
 
 ## `refinery-flare.jpg`
 
@@ -165,12 +169,6 @@ No figures were copied from Hyne / PennWell / geokniga.
 - **Source:** https://commons.wikimedia.org/wiki/File:Spindletop_Oil_Gusher.jpg
 - **Used in:** ch01, ch14, ch16
 
-## `structural-trap-anticline.jpg`
-
-- **License:** CC BY 3.0
-- **Author:** Oceanh
-- **Source:** https://commons.wikimedia.org/wiki/File:Structural_Trap_(Anticlinal).svg
-- **Used in:** intro, ch09, ch11
 
 ## `sunbury-black-shale.jpg`
 
@@ -191,14 +189,14 @@ No figures were copied from Hyne / PennWell / geokniga.
 - **License:** Public domain
 - **Author:** USGS
 - **Source:** https://commons.wikimedia.org/wiki/File:USGS.Natural_Gas_Well_Drill_Bit.Fayeteville_Shale_28099191.jpg
-- **Used in:** ch15, ch17, ch18
+- **Used in:** ch15, ch17, ch18 (interactive hotspots on PDC anatomy)
 
 ## `wellhead-blue.jpg`
 
 - **License:** Public domain
 - **Author:** Dexcel
 - **Source:** https://commons.wikimedia.org/wiki/File:Wellhead-blue.jpg
-- **Used in:** intro, ch01, ch15, ch18
+- **Used in:** intro, ch01, ch15, ch18 (interactive hotspots on ch15, ch18)
 
 ## `wellhead-obenor.jpg`
 
@@ -213,3 +211,11 @@ No figures were copied from Hyne / PennWell / geokniga.
 - **Author:** James St. John
 - **Source:** https://commons.wikimedia.org/wiki/File:Chalk_(%22Upper_Chalk%22_Formation,_Upper_Cretaceous;_White_Cliffs_of_Dover,_England,_southern_Britain).jpg
 - **Used in:** ch10
+
+## `well-types-usgs.jpg`
+
+- **License:** Public domain (U.S. EPA / USGS schematic)
+- **Author:** U.S. Government (EPA Assessment of Hydraulic Fracturing… External Review Draft, 2015; modified from USGS)
+- **Source:** https://commons.wikimedia.org/wiki/File:Schematic_cross-section_of_general_types_of_oil_and_gas_resources_and_the_orientations_of_production_wells_used_in_hydraulic_fracturing.jpg
+- **Used in:** ch17 (interactive hotspots)
+
