@@ -66,71 +66,86 @@
 <h2 id="sample">Sample (lithologic) log and cores</h2>
 <p>A <strong>sample / lithologic log</strong> is a strip describing each layer: header (operator, well, location), depth track, rock symbols (sand yellow, limestone blue, shale gray, coal black), plus texture, color, grain size, sorting, cement, porosity, oil stain, microfossils.</p>
 <figure class="figure">
-  <img src="img/core-samples.jpg" alt="Rock core samples—whole cores and plugs ground-truth porosity, permeability, and lithology from the sample log" loading="lazy" width="1600">
-  <figcaption>Rock core samples—whole cores and plugs ground-truth porosity, permeability, and lithology from the sample log.
-    <span class="src">CC BY-SA 4.0 — Thamizhpparithi Maari. <a href="https://commons.wikimedia.org/wiki/File:Core_samples.jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-030.png" alt="Sample / lithologic log" loading="lazy" width="1600">
+  <figcaption>Sample (lithologic) log—depth track with rock symbols and description columns.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
 <figure class="figure">
-  <img src="img/drill-core.jpg" alt="Drill core close-up—layering and texture visible for lithologic description" loading="lazy" width="1600">
-  <figcaption>Drill core close-up—layering and texture visible for lithologic description.
-    <span class="src">CC BY-SA 4.0 — Rjhogarth. <a href="https://commons.wikimedia.org/wiki/File:Drill_core.jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-028.png" alt="Rotary core barrel" loading="lazy" width="1600">
+  <figcaption>Rotary core barrel—recovers whole core for lithology and lab plugs.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
-
 <p>Data come from <strong>cuttings</strong> on the shaker—sampled every ~10 ft (3 m), down to ~1 ft in pay. Wash, bag, examine under loupe; oil stain confirmed with <strong>UV light</strong> (fluorescence varies with °API). <strong>Lag time</strong> matters: cuttings are not from “this meter now.” Measure lag with a tracer or pump rate × hole volume (rule of thumb in notes: ~8" hole ≈ 10 min per 1,000 ft). Wrong lag → wrong depth on the show.</p>
 <p><strong>Core</strong> is the most faithful reservoir sample: cylinder ~1¾–5¼" diameter, often 20–90 ft (up to ~400). Trip out, run hollow coring bit and core barrel (inner barrel stationary; core catcher). Expensive—usually only pay, and only a few wells per field. Empty barrel in broken/loose rock can ironically mean good reservoir (could not catch it). Oriented cores mark north; native-state sleeves preserve fluids; lab slabs and plugs measure φ and k.</p>
 <p><strong>Sidewall cores</strong> after drilling: percussion bullets (~30 shots—may crush grain and bias φ/k) or rotary sidewall bits (less alteration). Small (~1" × 1¾")—lithology checks, not full lab plugs. Old <strong>driller’s logs</strong> crudely separated limestone/sand/shale.</p>
 
 <h2 id="dtime">Drilling-time log</h2>
 <p><strong>ROP</strong> in min/ft or min/m on the geolograph—real-time. Depends on RPM, WOB, bit type, <em>and</em> rock; hold parameters steady and rock dominates. With tricones (notes): sand faster, shale medium, carbonate slower. A <strong>drilling break</strong> (sudden ROP change) flags a bed boundary or porous zone. In WITSML this is the ROP channel—without rig state (on-bottom vs connection) breaks lie.</p>
+<figure class="figure">
+  <img src="img/from-doc-025.png" alt="Drilling-time / ROP log" loading="lazy" width="1600">
+  <figcaption>Drilling-time (ROP) log—rate of penetration tracks lithology changes in real time.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
 
 <h2 id="mud">Mud log</h2>
 <p>Chemistry and eyes on mud + cuttings hunting shows above background. Service company trailer, geos on 12-h tours, 24/7. Sample from gas trap at shaker + cuttings. API-style format: depth track + sample description; ROP left; gas/oil right—total gas curve, C1–C5 chromatograph, black bars for visible oil stain. This is WITSML <code>mudLog</code>. Gas also has lag—what you smell now left a deeper meter minutes ago.</p>
 <figure class="figure">
-  <img src="img/oil-drilling-rig.jpg" alt="Onshore rotary drilling rig with standing mast and drill floor (Williston Basin)" loading="lazy" width="1600">
-  <figcaption>Drilling location—mud logging units sit by the shakers reading cuttings gas and lithology while the bit drills.
-    <span class="src">CC BY 2.0 — Lindsey G (Flickr). <a href="https://commons.wikimedia.org/wiki/File:Williston_North_Dakota_Oil_Field_Oil_Rig_(5894015279).jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-036.png" alt="Mud log" loading="lazy" width="1600">
+  <figcaption>Mud log—cuttings description with total gas and chromatograph shows while drilling.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
-
 <h2 id="wl">Wireline well logs — overview</h2>
 
 <p>A <strong>sonde</strong> on armored <strong>wireline</strong> runs after drilling (French invention ~1925; US ~1930). Condition the hole, trip out pipe, logging truck arrives. Tool ~27–60 ft (sometimes ~90), 3–4" OD; arms press to wall or centralize. Measure while pulling up. Deviated &gt;45° or horizontal: push with pipe/tubing or a tractor. One trip = a <strong>logging run</strong>; digital to truck, then cleaner final print.</p>
 <figure class="figure">
-  <div class="hotspot">
-    <img src="img/wellhead-blue.jpg" alt="Wellhead after drilling—wireline tools are run on cable through the wellhead/BOP to acquire open-hole or cased-hole logs" loading="lazy" width="1600">
-    <button type="button" class="pin is-active" style="left:50%;top:29%" data-title="Pressure gauge" data-body="Reads tubing or wellhead pressure at the top of the tree—first glance at flowing or shut-in conditions." aria-label="Pressure gauge">1</button>
-    <button type="button" class="pin" style="left:62%;top:38%" data-title="Wing / flowline" data-body="Side outlet and wing valve route production to the flowline and separators. Closing the wing isolates the well from the surface line." aria-label="Wing / flowline">2</button>
-    <button type="button" class="pin" style="left:49%;top:51%" data-title="Master valves" data-body="Primary isolation valves on the vertical bore. Upper and lower masters shut in the well for workovers or emergencies." aria-label="Master valves">3</button>
-    <button type="button" class="pin" style="left:50%;top:40%" data-title="Christmas-tree stack" data-body="The assembled valves, spools, and flanges above the tubing hanger—the “tree” that controls flow after completion." aria-label="Christmas-tree stack">4</button>
-    <button type="button" class="pin" style="left:50%;top:75%" data-title="Wellhead / casing at ground" data-body="Casing heads and hangers at ground level support surface casing and seal annular spaces under the tree." aria-label="Wellhead / casing at ground">5</button>
-  </div>
-  <div class="hotspot-panel" role="status" aria-live="polite">
-    <strong class="hotspot-title"></strong>
-    <p class="hotspot-body"></p>
-  </div>
-  <p class="hotspot-hint">Tap a numbered pin to explore the figure.</p>
-  <figcaption>Wellhead after drilling—wireline tools are run on cable through the wellhead/BOP to acquire open-hole or cased-hole logs.
-    <span class="src">Public domain — Dexcel. <a href="https://commons.wikimedia.org/wiki/File:Wellhead-blue.jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-003.png" alt="Wireline logging overview" loading="lazy" width="1600">
+  <figcaption>Wireline logging overview—logging truck and cable-conveyed sonde after drilling.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
 <figure class="figure">
-  <img src="img/drill-bit.jpg" alt="Worn roller-cone (tricone) drill bit—cones, teeth, and pin connection" loading="lazy" width="1600">
-  <figcaption>Bit and BHA context—LWD sensors ride near the bit; wireline tools come later on a separate logging run.
-    <span class="src">Public domain — USGS. <a href="https://commons.wikimedia.org/wiki/File:Drill_bit_tricone_worn.jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-041.png" alt="Open-hole vs cased-hole wireline" loading="lazy" width="1600">
+  <figcaption>Wireline tools—most logs are open-hole; some (GR, neutron) also run in cased hole.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
-
 <p>Format: header + central depth track. Depth datum <strong>KB</strong>, <strong>DF</strong>, or <strong>GL</strong>—mixing datums shifts every top. Track 1 left: usually SP or GR + caliper. Tracks 2/3: resistivity, density, neutron, sonic. Scales across the top; a <strong>kick</strong> is a big deflection. Vertical scales: correlation ~2"/100 ft; detail 5"+/100 ft. Most are <strong>open-hole</strong>; some run <strong>cased-hole</strong> (GR and neutron yes; classic resistivity no). <strong>Compensated</strong> tools correct for irregular hole.</p>
 
 <h2 id="elec">Electrical, induction, laterolog, SP</h2>
 <p>Old electric log: electrodes, inject current, read resistivity <strong>R</strong>. Short normal (~16") picks bed tops; long normal (~64") looks beyond the invaded zone (~0–100" of filtrate) toward true pore fluid. Brine conducts (low R); oil, gas, and fresh water do not (high R—kick right). Oil vs gas need other curves. If porosity is steady, OWC/GWC can be an R kick; with brine R + porosity you estimate oil saturation.</p>
+<figure class="figure">
+  <img src="img/from-doc-040.png" alt="Electrical log (SP + resistivity)" loading="lazy" width="1600">
+  <figcaption>Electrical log overview—SP and resistivity curves from electrode tools.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<figure class="figure">
+  <img src="img/from-doc-027.png" alt="SP and resistivity curve example" loading="lazy" width="1600">
+  <figcaption>SP and resistivity curve patterns—picks on deflections correlate wells and flag permeable vs tight beds.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
 <p><strong>SP (spontaneous potential)</strong> still used: surface electrode + downhole electrode. Where permeable reservoir meets shale, filtrate salinity vs formation water creates voltage. Track 1: left = potential reservoir; right = shale / tight sand / dense limestone. Shale: SP right + R left (both toward center). Tight sand/dense lime: SP right + R right—SP+R alone cannot separate those two. <strong>Picks</strong> on deflections correlate wells.</p>
 <p><strong>Induction</strong> for freshwater, oil-based, synthetic, or air muds (coils induce currents). <strong>Laterolog / guard</strong> for salty mud (focuses current). Both on track 2, logarithmic scale. Dual induction/laterolog: shallow/medium/deep see different distances—shallow ≠ deep maps invasion (a permeability clue). <strong>Microlog</strong> (tiny pad spacing) sees cake thickness—thicker cake ≈ more filtrate ≈ more permeable.</p>
+<figure class="figure">
+  <img src="img/from-doc-017.png" alt="Induction and laterolog" loading="lazy" width="1600">
+  <figcaption>Induction and laterolog—focused resistivity tools for fresh/oil-based vs salty mud systems.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
 
 <h2 id="gr">Gamma ray (GR)</h2>
 <p>Scintillation counter of natural K, Th, U radioactivity. Track 1: low left, high right. Shale (and some “hot” sands) to the right; clean sand/limestone (potential reservoir) to the left. Cheap; works open and cased. <strong>Spectral GR</strong> splits K/Th/U to avoid mistaking radioactive sand for shale. Estimates shaliness. On LWD horizontals, GR is often the lithology workhorse.</p>
+<figure class="figure">
+  <img src="img/from-doc-019.png" alt="Gamma ray log" loading="lazy" width="1600">
+  <figcaption>Gamma ray log—natural radioactivity separates shale (high) from clean reservoir (low).
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
 
 <h2 id="radio">Neutron and density</h2>
 <p>Radioactive source tools (source handled carefully from the truck).</p>
@@ -145,6 +160,12 @@
 <p><strong>Sonic / acoustic:</strong> Δt (µs/ft) between receivers. Solids fast; fluid/gas-filled pores slower. Order of magnitude: shale slower, sand faster, lime/dolomite fastest; gas very slow. With known lithology → porosity. Misses fracture porosity (fractures attenuate); sonic amplitude helps detect fractures.</p>
 <p><strong>Photo-electric factor (Pe)</strong> with density = litho-density log (mineralogy: lime vs dolomite vs sand).</p>
 <p><strong>Dipmeter:</strong> multi-arm resistivity + gyro → bed dip and azimuth (tadpole plots).</p>
+<figure class="figure">
+  <img src="img/from-doc-015.png" alt="Dipmeter tadpole plot" loading="lazy" width="1600">
+  <figcaption>Dipmeter tadpoles—circle for dip magnitude, tail for azimuth of bedding.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
 <p><strong>NMR:</strong> hydrogen relaxation → So, Sw, total/effective porosity, perm hints, movable fluid, irreducible water, gas, residual oil—“will it flow,” not just % void.</p>
 <p><strong>Imaging:</strong> resistivity button pads or ultrasonic echoes → thin beds, unconformities, natural vs induced fractures, vugs, strike/dip.</p>
 <p><strong>Quick-look / computed logs:</strong> truck or data center Sw, porosity, lithology fractions, fractures, TVD.</p>
@@ -153,24 +174,6 @@
 <h2 id="mwd">MWD and LWD</h2>
 
 <p>Wireline is after. <strong>MWD/LWD</strong> ride above the bit while drilling. Power: mud turbine or batteries. Telemetry: <strong>mud pulse</strong> pressure waves to a surface transducer.</p>
-<figure class="figure">
-  <div class="hotspot">
-    <img src="img/usgs-drill-bit.jpg" alt="Drill bit (USGS)—MWD/LWD tools are hosted in collars above the bit to measure while drilling" loading="lazy" width="1600">
-    <button type="button" class="pin is-active" style="left:15%;top:18%" data-title="Pin / connection" data-body="Threaded pin that screws the bit onto the drillstring (BHA). Makeup torque and thread condition matter before the bit goes in the hole." aria-label="Pin / connection">1</button>
-    <button type="button" class="pin" style="left:55%;top:35%" data-title="Blades" data-body="Raised steel blades carry the cutters and set the bit’s gauge. Blade count and geometry are chosen for the formation and ROP goals." aria-label="Blades">2</button>
-    <button type="button" class="pin" style="left:78%;top:32%" data-title="PDC cutters" data-body="Polycrystalline diamond compact discs shear rock as the bit turns. Unlike tricone teeth, PDC cutters do not roll—they scrape." aria-label="PDC cutters">3</button>
-    <button type="button" class="pin" style="left:48%;top:54%" data-title="Nozzle" data-body="Mud exits here at high velocity to cool cutters and lift cuttings. Nozzle size (TFA) is part of hydraulics planning." aria-label="Nozzle">4</button>
-  </div>
-  <div class="hotspot-panel" role="status" aria-live="polite">
-    <strong class="hotspot-title"></strong>
-    <p class="hotspot-body"></p>
-  </div>
-  <p class="hotspot-hint">Tap a numbered pin to explore the figure.</p>
-  <figcaption>Drill bit (USGS)—MWD/LWD tools are hosted in collars above the bit to measure while drilling.
-    <span class="src">Public domain — USGS. <a href="https://commons.wikimedia.org/wiki/File:USGS.Natural_Gas_Well_Drill_Bit.Fayeteville_Shale_28099191.jpg" rel="noopener noreferrer">Source</a></span>
-  </figcaption>
-</figure>
-
 <ul>
   <li><strong>LWD:</strong> resistivity, GR (natural/spectral), density, neutron, NMR, caliper—same families as wireline, near real time.</li>
   <li><strong>MWD:</strong> toolface, azimuth, deviation, torque, WOB, temperature, pressure—the path from Ch 17.</li>
@@ -181,12 +184,11 @@
 
 <p>A temporary completion while mud still fills the hole. Run drillstem with packer(s), perforated pipe, gauges, valves. Packer isolates the zone from the mud column; open the valve—formation fluid enters the drillstem. Bottom zone: one packer; higher zone: <strong>straddle</strong> packers. Gas often reaches surface (measure/flare); oil may flow or only rise partway up the pipe. Multiple open/shut periods → pressure buildup → permeability, reservoir pressure, skin. Duration: ~20 min to 3 days (longer = more certainty = more rig time). Open-hole or perforated cased; avoid unconsolidated sand. Mostly exploration wells.</p>
 <figure class="figure">
-  <img src="img/first-oil-well-drake.jpg" alt="Historic Drake Well—testing whether a well can flow commercial volumes is as old as the industry; today we use DST/RFT i" loading="lazy" width="1600">
-  <figcaption>Historic Drake Well—testing whether a well can flow commercial volumes is as old as the industry; today we use DST/RFT instead of “wait and see.”
-    <span class="src">Public domain — Unknown (c.1890). <a href="https://commons.wikimedia.org/wiki/File:First_Oil_Well.jpg" rel="noopener noreferrer">Source</a></span>
+  <img src="img/from-doc-010.png" alt="Drillstem test (DST)" loading="lazy" width="1600">
+  <figcaption>Drillstem test (DST)—packer isolation, flow/shut-in periods, and pressure buildup for perm and reservoir pressure.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
   </figcaption>
 </figure>
-
 <h2 id="rft">Repeat formation tester (RFT / WFT)</h2>
 <p>Wireline tool: pad/valve presses against the wall; fluid enters; pressure vs time → perm estimate. Sample chambers collect fluid for <strong>Rw</strong> and <strong>Sw</strong>. Repeat at many depths in one well.</p>
 
