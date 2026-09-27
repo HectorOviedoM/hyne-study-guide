@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 24 Petroleum Production — Hyne Study Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Hyne Study Guide</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Hub</a>
+        <a href="intro.html">Intro</a>
+        <a href="ch01.html">Ch 1</a>
+        <a href="ch09.html">Ch 9</a>
+        <a href="ch10.html">Ch 10</a>
+        <a href="ch11.html">Ch 11</a>
+        <a href="ch14.html">Ch 14</a>
+        <a href="ch15.html">Ch 15</a>
+        <a href="ch16.html">Ch 16</a>
+        <a href="ch17.html">Ch 17</a>
+        <a href="ch18.html">Ch 18</a>
+        <a href="ch19.html">Ch 19</a>
+        <a href="ch21.html">Ch 21</a>
+        <a href="ch24.html">Ch 24</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#pressures">Well &amp; reservoir pressures</a></li>
+  <li><a href="#testing">Well testing</a></li>
+  <li><a href="#cased">Cased-hole logs</a></li>
+  <li><a href="#prodlogs">Production logs</a></li>
+  <li><a href="#decline">Decline curves</a></li>
+  <li><a href="#bypass">Bypassing &amp; coning</a></li>
+  <li><a href="#cycling">Cycling</a></li>
+  <li><a href="#stim">Well stimulation</a></li>
+  <li><a href="#disposal">Brine &amp; solution gas</a></li>
+  <li><a href="#subsidence">Surface subsidence</a></li>
+  <li><a href="#corrosion">Corrosion</a></li>
+  <li><a href="#maps">Production maps</a></li>
+  <li><a href="#stranded">Stranded gas</a></li>
+<li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+
+<h1>Chapter 24 — Petroleum Production</h1>
+<p class="why-matters" id="why">In 2010 the world averaged about 73.6 million bbl/d of oil. The U.S. still had the most producing wells on Earth—just over a million in 2008—but the average U.S. oil well made only ~10 bbl/d. A petroleum engineer designs how the well is drilled, tested and completed. A reservoir engineer owns the field after that: how fast you produce, what you inject, when you stimulate, when you quit. This chapter is that job.</p>
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Separate tubing, casing, flowing and shut-in bottomhole pressures—and what drawdown means.</li>
+    <li>Read a decline curve (IP, stripper, economic limit) and how drive type shapes it.</li>
+    <li>Explain bypassing, coning/cresting, and why rate is not only an economics choice.</li>
+    <li>Outline acidizing vs hydraulic fracturing stages (pad, slurry, backflush) and brine/gas disposal options.</li>
+  </ul>
+</section>
+
+<h2 id="pressures">Well and reservoir pressures</h2>
+<p><strong>Tubing pressure</strong> is the fluid inside the tubing (the gauge on the tree). <strong>Casing pressure</strong> is the fluid in the casing–tubing annulus. They are not the same number and a change in one with the other quiet is a diagnostic. <strong>Bottomhole pressure</strong> is measured at the pay, either flowing (well open) or shut-in / static after the well has sat closed long enough to stabilize—often 24 hours. <strong>Drawdown</strong> is shut-in minus flowing: the price, in psi, you pay to move fluid. Virgin / initial / original pressure is the reservoir before anyone produced a barrel. After that, shut-in bottomhole pressure is how you watch the tank empty.</p>
+<p>A <strong>pressure bomb</strong> (~6 ft metal tube on wireline) carries a sensor, a clock and a chart of pressure versus time; temperature can ride a similar tool. An electronic gauge on conductor line does the same job with a cleaner file.</p>
+<figure class="figure">
+  <img src="img/from-doc-066.png" alt="Pressure bomb / downhole gauge" loading="lazy" width="1600">
+  <figcaption>Pressure bomb (or electronic gauge)—wireline tool that records bottomhole pressure versus time.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="testing">Well testing</h2>
+<p>Tests exist to pick a rate that makes money without wrecking the reservoir. The operator, a tester or a service company runs them with kit already on site or with a portable spread.</p>
+<figure class="figure">
+  <img src="img/from-doc-067.png" alt="Well testing schematic" loading="lazy" width="1600">
+  <figcaption>Well-testing setup—separator, tanks, and gauges used to measure rates and pressures.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<p><strong>Potential test:</strong> after completion (and sometimes again later, sometimes required by the state), how much gas and oil the well can make in 24 hours, using the separator and tanks that are already there. <strong>Productivity test:</strong> portable gear measures shut-in bottomhole pressure, then the same point at several stabilized rates—from that you calculate absolute open flow and the highest rate that does not damage the rock. On a pad with a central plant, production tests split the battery so you know this well’s oil, water, gas, GOR and flowing tubing pressure—or, on gas wells, gas, condensate, water, tubing pressure and CGR.</p>
+<p>Pressure-transient work watches pressure change, not just a number: <em>drawdown</em> (shut-in, then open and record the fall), <em>buildup</em> (flowing, then shut in and record the rise), <em>multirate / four-point</em> (flowing pressure at several stable rates). <strong>Deliverability</strong> is how much the reservoir will give you at a given flowing bottomhole pressure. <strong>AOF</strong> is the theoretical rate if bottomhole pressure were zero—calculated, never measured. <strong>PI</strong> is drawdown (psi) divided by rate (bbl/d); land wells are often &gt;0.1, offshore &gt;0.5. <strong>IPR</strong> is the same plot with reservoir drive, rising GOR and changing relative perm folded in. Gas wells add a backpressure test: shut-in plus several stable flowing pressures to get deliverability.</p>
+
+<h2 id="cased">Cased-hole logs</h2>
+<p>When a zone is dead you either P&amp;A or hunt for another pay behind pipe. Only GR and neutron porosity work well through casing. A <strong>pulsed-neutron</strong> log fires neutron pulses and reads the returning gamma rays; it can tell gas/oil from water and is the usual tool for “is there still a reservoir out there?”</p>
+
+<h2 id="prodlogs">Production logs</h2>
+<p>These go into a live well, on wireline through tubing or on a tubing string, because something is wrong. A <strong>tracer log</strong> spots a radioactive slug and follows it with GR—where fluid is moving, including behind pipe. A continuous flowmeter is a propeller versus depth; a packer flowmeter seals the hole so all the flow goes through the meter. A noise log is a microphone: flow into the well makes sound; frequency separates liquid from gas. A temperature log is run after the well has sat so the hole is quiet—gas entering expands and cools; that cold streak is the entry. A manometer is pressure at one depth; a gradiometer is a pressure-gradient profile. A water-cut meter is how wet the stream is. A collar log finds casing collars so you know exactly where you are; paired with GR it is how you aim the next perforating gun.</p>
+
+<h2 id="decline">Decline curves</h2>
+<p>Rate versus time for a well or a field. Pressure falls, rate falls. <strong>IP</strong> is the first 24 hours and is usually the peak. When rate is barely worth the opex the well is a <strong>stripper</strong>: in the U.S., &lt;10 bbl/d of oil over a year, or 60 Mcf/d of gas at max rate, with a tax break attached. In 2007 those wells were ~77% of U.S. oil wells, ~2 bbl/d each, and still ~16% of U.S. oil. <strong>Economic limit</strong> is the day cost equals net revenue—depth, water cut, location. Then you P&amp;A or start improved recovery. Most wells are built for 15–20 years.</p>
+<figure class="figure">
+  <img src="img/from-doc-068.png" alt="Decline curve" loading="lazy" width="1600">
+  <figcaption>Decline curve—rate vs time from IP through stripper territory to economic limit and P&amp;A.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<p>Shape of the curve is the drive from Chapter 9 wearing a watch: solution-gas is a steep cliff; water drive is almost flat for years; gas-cap expansion is in between. Tight rock with natural fractures (Spraberry, Barnett) has its own shape: a high IP while the fractures dump, then a sudden drop, then a long skinny tail while matrix leaks slowly into those same fractures—why shale wells still produce years after the headline rate is gone.</p>
+<figure class="figure">
+  <img src="img/from-doc-069.png" alt="Decline shapes by drive" loading="lazy" width="1600">
+  <figcaption>Decline-curve shapes—solution-gas, water-drive, gas-cap, and tight fractured rock behave differently.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="bypass">Bypassing and coning</h2>
+<p>Fast production pays the AFE back sooner. Heterogeneous rock punishes that instinct. In a water-drive reservoir, water rushes into the permeable streaks and <strong>bypasses</strong> oil sitting in tighter pockets—that oil is then sealed off from the wells you already have. Slower rate lets the tight rock drain before the water locks it.</p>
+<figure class="figure">
+  <img src="img/from-doc-070.png" alt="Water bypassing oil" loading="lazy" width="1600">
+  <figcaption>Bypassing—water preferential paths leave oil stranded in tighter rock.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<p><strong>Coning</strong> is the contact itself being sucked: OWC up into the well on bottom water, GOC down into the well on a gas cap. It can ruin the completion. A horizontal stays in the oil column and makes coning harder; if it still happens on a lateral it is called <strong>cresting</strong>.</p>
+<figure class="figure">
+  <img src="img/from-doc-071.png" alt="Coning and cresting" loading="lazy" width="1600">
+  <figcaption>Coning—OWC or GOC pulled into the wellbore; on a horizontal, the same idea is cresting.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="cycling">Cycling</h2>
+<p>In a retrograde-gas reservoir, dropping pressure drops condensate out in the rock. That liquid coats grains and you will not get it back. <strong>Cycling</strong> strips NGLs at surface and injects the dry gas back through injection wells so reservoir pressure never falls through the dew point. Saturated oil fields put that gas into the cap; undersaturated fields put it into the oil column.</p>
+
+<h2 id="stim">Well stimulation</h2>
+<p>When the well will not give what the rock should, you stimulate: acid, old-school explosives, or frac.</p>
+<h3 id="acid">Acidizing</h3>
+<p>Acid is pumped to dissolve limestone, dolomite, or calcite cement in a sandstone. HCl for carbonates, HF (or HCl+HF “mud acid”) for sandstones; acetic/formic when the hole is too hot for HCl. An inhibitor keeps the acid from eating casing and tubing. A sequestering agent stops iron gels from plugging pores. <strong>Matrix acidizing</strong> stays below frac pressure and just enlarges existing pores. <strong>Fracture acidizing</strong> is pumped hard enough to split the rock and etch the faces. Spent acid, dissolved rock and fines come back on backflush. The same treatment as a light “wash job” is how you treat skin on the borehole.</p>
+<h3 id="explosive">Explosive fracturing</h3>
+<p>From the 1860s to the late 1940s the stimulation tool was a tin torpedo of nitroglycerin, run to bottom and shot by a shooter. It left a cave that you cleaned out and completed open-hole. It worked. It also killed people. Hydraulic fracturing replaced it.</p>
+<h3 id="frac">Hydraulic fracturing</h3>
+<p>Developed in 1948; by 2010 more than 60% of U.S. completions were fraced. A service company pumps a large volume of fluid hard enough to split the pay—in open hole or through perforations. Common fluid is water plus polymers (a gel). Oil-based or N₂/CO₂ foam is used when you cannot afford filtrate damage. About 0.5% of the volume is additives in the same family as mud chemicals.</p>
+<figure class="figure">
+  <img src="img/from-doc-072.png" alt="Hydraulic fracturing" loading="lazy" width="1600">
+  <figcaption>Hydraulic fracturing—surface pump trucks force fluid and proppant into the pay to open and prop a fracture.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<p>Three stages: <strong>pad</strong>—fluid only, to start the crack; <strong>slurry</strong>—same fluid plus proppant (well-sorted quartz sand; ceramic or alumina if high pressure) to grow the crack and leave it packed; <strong>backflush</strong>—you recover only ~10–30% of the fluid. Crosslinked gel is thick enough to carry sand; a breaker later thins it so backflush can move it. Medium-to-hard (brittle) rock holds a pack; unconsolidated sand does not—the proppant embeds and the crack heals.</p>
+<p>On location: frac tanks, a blender, pump trucks into a manifold, sometimes a wellhead isolation tool so the tree does not eat 10,000 psi of sand. The frac van runs the job. Size is barrels of fluid and pounds of sand. A “normal” modern job in the book is ~60,000 gal and ~100,000 lb of sand; a massive job is roughly &gt;1 million gal and &gt;5 million lb. A <strong>frac pack</strong> uses thick gel and a lot of sand to make short, fat fractures—common offshore. Result: rate up 1.5–30× (biggest lift in tight rock), EUR up ~5–15%. The failure mode that matters is fracturing into water and drowning the well.</p>
+
+<h2 id="disposal">Disposal of oilfield brine and solution gas</h2>
+<p>Associated gas leaves the separator at atmospheric pressure. Compressing it to pipeline spec may not pay. Flaring used to be the answer; it is illegal in most places now and survives only when there is no other option or during a test. Better: strip NGLs and inject the dry gas back—pressure maintenance—into the cap (saturated field) or the oil column (undersaturated). Lease gas can also go to the landowner or to the engine on the beam pump.</p>
+<figure class="figure">
+  <img src="img/from-doc-073.png" alt="Gas and brine handling" loading="lazy" width="1600">
+  <figcaption>Surface handling of associated gas and produced brine after separation.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<p>Brine from the same separators is injected below the OWC in that same pressure-maintenance system if you have an injection well. If not, it sits in a steel or fiberglass saltwater tank. A permitted <strong>disposal well</strong> puts it into a reservoir that is already saline, that will not leak into freshwater, and that can take the extra pressure. No disposal well means evaporate in an open tank and, when it is full, pay a water hauler to a commercial well.</p>
+<figure class="figure">
+  <img src="img/from-doc-074.png" alt="Disposal / injection well" loading="lazy" width="1600">
+  <figcaption>Disposal or injection well—returning brine (or dry gas) below the freshwater zone for pressure maintenance or disposal.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="subsidence">Surface subsidence</h2>
+<p>Produced fluid is supposed to be replaced by water from the sides and bottom. If it is not, the reservoir compacts and the ground falls. Wilmington (Long Beach) has made a 29-ft bowl since the 1940s; much of the city sits below sea level and lives behind a dike after a huge waterflood stopped the sink. Ekofisk chalk compacted enough that casings collapsed and the boat dock went underwater; in 1987 they cut the platform legs, jacked the deck and spliced extensions.</p>
+<figure class="figure">
+  <img src="img/from-doc-075.png" alt="Surface subsidence" loading="lazy" width="1600">
+  <figcaption>Surface subsidence—reservoir compaction lowering the ground (Wilmington / Ekofisk-type cases).
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="corrosion">Corrosion</h2>
+<p>Metal plus air, water, seawater, oxygen, CO₂ (sweet) or H₂S (sour) is chemistry you pay for. Crude’s total acid number (mg KOH/g) is a proxy for how mean the oil is. Paint the iron you can see. Inhibitors batch or drip into the annulus and leave a film on tubing and surface kit. Flowlines can take a concrete lining; injection/disposal tubing often takes plastic. Big steel—pipelines, jackets—gets cathodic protection, an imposed charge so the structure is not the anode that dissolves.</p>
+
+<h2 id="maps">Production maps</h2>
+<p>A <strong>well-status map</strong> is the daily picture: every well, oil and water rate and GOR on producers, injection rate, pressure and cumulative water on injectors—problem wells show up as the odd bubble. A cumulative map is life-to-date oil, gas and water by well. A <strong>bubble map</strong> draws a circle whose radius is IP or cumulative of oil, gas or water—you see who drained what, and where the flood has not arrived.</p>
+<figure class="figure">
+  <img src="img/from-doc-076.png" alt="Bubble map" loading="lazy" width="1600">
+  <figcaption>Bubble map—well symbols sized by oil or gas volume; dry holes marked separately.
+    <span class="src">Course study figures (Hyne notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="stranded">Stranded gas</h2>
+<p>Gas with no pipe to a buyer—West Siberia, northwest Canada, Alaska, the Middle East. You turn it into a liquid so a ship can move it. <strong>LNG:</strong> methane chilled to –269°F / –167°C, ~1/645 the volume of the gas, hauled in special tankers. North Dome / South Pars (Qatar–Iran) is the world’s largest conventional gas field and Qatar is the largest LNG exporter. <strong>Gas-to-liquids:</strong> methane plus air to synthesis gas (CO + H), then a second reactor to synthetic crude.</p>
+<p>The production chain for your notes: pressures and tests tell you what the well can do; decline, bypassing and coning tell you what happens if you pull too hard; acid and frac are how you open the rock you just cased and perforated in Chapter 19; injection of gas and brine is how you put pressure back. Frac data is a different stream from drilling WITSML—treating pressure, slurry rate, proppant concentration, stage—but the reason the job exists is this chapter plus the tight-rock story.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  <ul>
+    <li>Production volumes: oil/water/gas daily and cumulative; GOR/CGR; tubing vs casing pressures.</li>
+    <li>Well tests and pressure transients are time-indexed objects linked to intervals.</li>
+    <li>Frac stages: treating pressure, slurry rate, proppant concentration—not the same as Petrolink drilling channels.</li>
+    <li>Injection / disposal wells are first-class wellbores with rate and pressure series.</li>
+  </ul>
+</aside>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+  <dt>Drawdown</dt><dd>Shut-in bottomhole pressure minus flowing bottomhole pressure.</dd>
+  <dt>AOF / PI / IPR</dt><dd>Absolute open flow; productivity index; inflow performance relationship.</dd>
+  <dt>Decline curve</dt><dd>Rate vs time from IP to economic limit.</dd>
+  <dt>Stripper</dt><dd>Very low-rate well near (or past) economic interest.</dd>
+  <dt>Bypassing / coning</dt><dd>Water taking permeable paths; contact sucked into the well.</dd>
+  <dt>Acidizing</dt><dd>Matrix or fracture acid to dissolve rock or cement skin.</dd>
+  <dt>Hydraulic fracture</dt><dd>Pad → slurry with proppant → backflush to open and prop the pay.</dd>
+  <dt>Bubble map</dt><dd>Map with symbols sized by rate or cumulative production.</dd>
+  </dl>
+</section>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="ch21.html"><span class="label">Previous</span>Ch 21 · Offshore Drilling &amp; Completion</a></nav>
+
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader's notes on Hyne, Nontechnical Guide (3rd ed.). Figures are course study diagrams from the Google Doc notes. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
