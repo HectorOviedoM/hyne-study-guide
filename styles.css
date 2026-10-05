@@ -115,6 +115,31 @@ a:hover { color: var(--teal-dark); }
 .site-header .chapter-bar a { white-space: nowrap; }
 .site-brand { font-size: 1.05rem; }
 
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+.back-link {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(246, 241, 232, 0.55);
+  border-radius: var(--radius);
+  padding: 0.32rem 0.7rem;
+  white-space: nowrap;
+}
+.back-link:hover {
+  color: var(--amber-soft);
+  border-color: var(--amber);
+  background: rgba(0,0,0,0.22);
+}
+
 .search-wrap {
   display: flex;
   align-items: center;
