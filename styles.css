@@ -708,3 +708,23 @@ a:hover { color: var(--teal-dark); }
   .hotspot .pin { display: none !important; }
   .hotspot-panel { border-left-color: #000; }
 }
+
+
+/* —— Multi-book hub —— */
+.book-card .source {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  margin: 0.15rem 0 0;
+}
+.eq {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  background: var(--paper-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  margin: 0.4rem 0 1rem;
+  overflow-x: auto;
+}
+.eq p { margin: 0.2rem 0; }

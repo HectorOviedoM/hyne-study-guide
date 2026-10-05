@@ -1,6 +1,32 @@
 (function () {
   "use strict";
 
+  var bookGrid = document.getElementById("book-grid");
+  if (bookGrid && window.STUDY_BOOKS) {
+    window.STUDY_BOOKS.forEach(function (book) {
+      var li = document.createElement("li");
+      li.className = "chapter-card book-card";
+      var num = document.createElement("span");
+      num.className = "num";
+      num.textContent = book.kicker || "Book";
+      var a = document.createElement("a");
+      a.href = book.href;
+      a.textContent = book.title;
+      var p = document.createElement("p");
+      p.textContent = book.blurb || "";
+      li.appendChild(num);
+      li.appendChild(a);
+      li.appendChild(p);
+      if (book.source) {
+        var s = document.createElement("p");
+        s.className = "source";
+        s.textContent = book.source;
+        li.appendChild(s);
+      }
+      bookGrid.appendChild(li);
+    });
+  }
+
   var search = document.getElementById("site-search");
   var path = (window.location.pathname || "").toLowerCase();
   var file = path.split("/").pop() || "index.html";

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 2 Reading Logs — Well Logging</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="logging.html">Well Logging</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Books</a>
+        <a href="logging.html">Contents</a>
+        <a href="logging-ch01.html">Ch 1</a>
+        <a href="logging-ch02.html">Ch 2</a>
+        <a href="logging-ch03.html">Ch 3</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#header">The header</a></li>
+  <li><a href="#main">Main log section</a></li>
+  <li><a href="#vertical">Vertical scale</a></li>
+  <li><a href="#horizontal">Horizontal scale</a></li>
+  <li><a href="#inserts">Inserts</a></li>
+  <li><a href="#repeat">Repeat section</a></li>
+  <li><a href="#cal">Calibrations</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+
+<h1>Reading Logs</h1>
+<p class="why-matters" id="why">Curves mean nothing until you can find depth, scale, and the mark that says the tool was on bottom. Learn the five parts of a print before any resistivity or porosity theory.</p>
+
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Name the five parts: header, main log, inserts, repeat section, calibrations.</li>
+    <li>Read a depth on the 1-in., 2-in., and 5-in. scales and say what each scale is for.</li>
+    <li>Read a linear track, a backup curve, a backwards porosity scale, and a log cycle.</li>
+    <li>Use the FR mark, the repeat section, and the before/after calibration the way a witness would.</li>
+  </ul>
+</section>
+
+<p>Before the physics of each curve, learn the page. A standard print has five parts: the <strong>header</strong>, the <strong>main log section</strong>, the <strong>inserts</strong>, the <strong>repeat section</strong>, and the <strong>calibrations</strong>.</p>
+
+<h2 id="header">The header</h2>
+<p>The block of text at the top is the heading. It holds facts the curves do not:</p>
+<ol>
+  <li>Logging company</li>
+  <li>Operating company (the operator)</li>
+  <li>Well identity: name or number, lease or field, legal location, ground elevation and usually the rig floor or kelly bushing, the date, total depth when the log was run, mud properties, bit size, casing size and depth</li>
+  <li>Type of log</li>
+  <li>Other logs or surveys on the same well</li>
+  <li>Equipment: tool serial numbers, spacings, truck number, and the office that sent the truck</li>
+  <li>People: who recorded it, and who witnessed it (the company man)</li>
+  <li>Remarks: anything odd on the job</li>
+  <li>Scales, and which line is which curve</li>
+</ol>
+<figure class="figure">
+  <img src="img/logging/fig-02.png" alt="Log header for a Dual Induction-SFL gamma-ray survey, with numbered blocks for company, well, mud and depth, other services, scales, logging unit, people, remarks, and curve scales" loading="lazy">
+  <figcaption>A header is a form, not decoration. The numbered blocks cover log type, operator and well, depths and mud, other services, presentation scales, the logging unit and witnesses, remarks, and the curve-scale strip.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<p>Rule one: read the header before you interpret. Confirm the well. Then log type, mud (resistivity, water loss, weight, viscosity), bit size, casing depth, and total depth. Read the remarks. Note which company ran the job. Shops are not equally careful, and that changes how hard you lean on the numbers.</p>
+
+<h2 id="main">Main log section</h2>
+<p>Under the header is the long graph: what the tools sent up the cable. You read <strong>depth</strong> on the vertical axis and the <strong>measurement</strong> on the horizontal axis.</p>
+
+<h3 id="vertical">Vertical scale</h3>
+<p>Depth is linear, like a ruler. The depth track sits near the middle, with a number every 100 ft on the depth lines. Common scales are <strong>1, 2, or 5 inches per 100 ft</strong>. On a 2-in. log, 1600 to 1700 ft is 2 inches of paper. On a 5-in. log that same 100 ft is 5 inches.</p>
+<p>The 1-in. and 2-in. scales also mark 50 ft and 10 ft. A depth that falls between lines (1738 ft) is estimated by eye. A 5-in. log adds light 2-ft lines, so you can read to about half a foot.</p>
+<p>The 1-in. and 2-in. scales are <strong>correlation scales</strong>. Geologists use them to compare wells over long intervals. Two inches per 100 ft is the usual scale for one or two nearby offsets. One inch per 100 ft is for cross-sections that cover miles of ground and thousands of feet of rock. Five inches per 100 ft is the <strong>detail scale</strong>: the plot is stretched, so thin features show. Super-detail scales (10 or 25 in. per 100 ft) are mostly for micrologs and fracture-identification logs, and only over a short piece of hole.</p>
+<p>Left of the depth track is <strong>track 1</strong>, often called the SP or GR track because spontaneous potential and gamma ray usually live there. Right of the depth track are <strong>track 2</strong> and <strong>track 3</strong>, for resistivity, porosity, sonic velocity, and similar curves.</p>
+<figure class="figure">
+  <img src="img/logging/fig-03.png" alt="Log grid from about 1700 to 2400 ft with a narrow left track and a wide right track of curves" loading="lazy">
+  <figcaption>Depth down the middle, track 1 on the left, and the measurement tracks on the right. Correlation work uses this kind of compressed vertical scale so a long interval fits on a few pages.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h3 id="horizontal">Horizontal scale</h3>
+<p>Each track is divided, and each curve is labeled at the bottom with a line style and its own numbers.</p>
+<p>Example: a GR curve in track 1 runs from 0 at the left (division 0) to 100 at the right (division 10). Ten divisions cover 100 API-style units, so one division is 10. Four divisions from the left is 40.</p>
+<p>A resistivity curve in track 2 might run 0 to 20, so each division is 2. If the curve leaves the right edge, a heavier <strong>backup</strong> (often one-tenth the sensitivity, 0 to 200) continues it. The right edge of track 2 is the left edge of track 3. Some curves cross both tracks. Others stop at division 10.</p>
+<p>At the bottom of a curve, a short tick marked <strong>FR</strong> (first reading)—FR GR, FR R—is the last valid sample. Do not read below it. The tool is sitting on bottom and is not measuring. FR R can be deeper than FR GR because the gamma-ray detector was higher on the tool string and could not reach as far.</p>
+<p>When a curve spans tracks 2 and 3, count divisions across both. A bulk-density curve (RHOB) from 2.0 at the left of track 2 to 3.0 at the right of track 3 covers 1.0 g/cm³ in 20 divisions, so each division is 0.05. Some porosity curves (PHIN) run <strong>backwards</strong>: high on the left, low or negative on the right. A minus sign on “units per division” means the numbers grow from right to left. Zero porosity then sits in the middle of the track, not on the left edge.</p>
+<p>Track 1 is always linear. Tracks 2 and 3 may be linear, both logarithmic, or split (track 2 logarithmic, track 3 linear).</p>
+<p>A <strong>logarithmic</strong> scale is built on powers of ten. Each cycle is ten times the one before it—like 1¢ to 10¢, then 10¢ to $1, then $1 to $10. A wide range fits in a narrow track. Resistivity presentations (a dual induction–SFL, for example) are often drawn this way. The scale may start at 0.2 rather than 0.1. The idea is the same: to read a point between grid lines, add the contribution of each cycle, the way 500 + 20 + 5 is 525.</p>
+<p>Another common layout puts depth on the far left and four tracks to the right. That is typical of a <strong>computed</strong> log, which a computer builds by combining two or more measurements.</p>
+<figure class="figure">
+  <img src="img/logging/fig-04.png" alt="Gamma ray in the left track and resistivity in the right track, with FR GR and FR R marks and backup scales of 0 to 200" loading="lazy">
+  <figcaption>Linear scales with a backup. GR is 0–100 (backup 100–200). Resistivity is 0–20 (backup 0–200). The FR ticks are the first readings: do not interpret the curve below them. FR R sits deeper than FR GR.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="inserts">Inserts</h2>
+<p>Between major sections, and again at the end, an insert names every curve and gives its scale. Lines may be solid, long-dashed, short-dashed, or dotted, and heavy or light.</p>
+<p>A typical insert might show, in track 1, GR as a heavy solid line from 0 to 150 and SP as a dashed line from −160 to +40 (20 units per division). In track 2, SFLA solid and ILD dashed, both 0 to 50 ohm-m. A conductivity curve (CILD) may cross tracks 2 and 3, solid, scaled 1000 to 0 millimhos. Ignore the alphabet soup for now. Each row is a name plus a line code so you can find that pen on the graph.</p>
+<p>The insert is repeated when the presentation changes from the 2-in. scale to the 5-in. scale, because extra curves may appear and tracks 2 and 3 may switch to logarithmic.</p>
+
+<h2 id="repeat">Repeat section</h2>
+<p>The repeat section is the same interval logged at least twice. Lay it beside the main log and compare several depths. If they disagree, rerun with different tools. If you cannot, treat the log with caution.</p>
+<p>Radioactive curves always fidget a little, because decay is random. Resistivity and sonic curves should repeat closely. The repeat section is attached below the main log.</p>
+
+<h2 id="cal">Calibrations</h2>
+<p>The last section is the before-and-after calibration. It shows the tools were set before the run and still inside tolerance at the end. For an ordinary read, assume they were. If you suspect drift, call the logging company, ask about the procedure, and have them show both checks.</p>
+<p>Once you can name the five parts and read a depth and a curve value, you are ready for what the curves mean.</p>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  <ul>
+    <li>Store the <strong>index</strong> (measured depth) separately from each curve. A 1-in., 2-in., or 5-in. scale is a presentation, not a second dataset.</li>
+    <li>Header facts—operator, well name, KB elevation, bit size, mud resistivity, casing depth, run date—belong on the log header object, not inside the curve samples.</li>
+    <li>Mnemonics such as GR, SP, ILD, SFLA, RHOB, and CILD are curve names. Units and the “backwards” porosity wrap are presentation metadata.</li>
+    <li>An FR depth is the first valid index of that curve. Samples past it should not be treated as formation.</li>
+  </ul>
+</aside>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+    <dt>Header</dt><dd>The text block: well, mud, tools, people, scales.</dd>
+    <dt>Correlation scale</dt><dd>1 or 2 in. per 100 ft, for comparing wells.</dd>
+    <dt>Detail scale</dt><dd>5 in. per 100 ft, stretched so thin beds show.</dd>
+    <dt>Track 1 / 2 / 3</dt><dd>Left track (usually SP or GR); two tracks to the right of depth.</dd>
+    <dt>Backup curve</dt><dd>A second, coarser scale that continues a curve off the track.</dd>
+    <dt>FR</dt><dd>First reading. Do not read the curve below this tick.</dd>
+    <dt>Insert</dt><dd>Legend of curve name, line style, and scale.</dd>
+    <dt>Repeat section</dt><dd>The same interval logged twice, to check the tools.</dd>
+  </dl>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="logging-ch01.html"><span class="label">Previous</span>Ch 1 · Introduction to Logging</a><a class="next" href="logging-ch03.html"><span class="label">Next</span>Ch 3 · Formation Parameters</a></nav>
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader’s notes on Well Logging in Nontechnical Language. Figures are the course-doc diagrams. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>

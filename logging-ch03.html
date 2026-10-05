@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ch 3 Formation Parameters — Well Logging</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="logging.html">Well Logging</a>
+      <nav aria-label="Chapters">
+        <a href="index.html">Books</a>
+        <a href="logging.html">Contents</a>
+        <a href="logging-ch01.html">Ch 1</a>
+        <a href="logging-ch02.html">Ch 2</a>
+        <a href="logging-ch03.html">Ch 3</a>
+      </nav>
+      <div class="search-wrap">
+        <label for="site-search">Search</label>
+        <input type="search" id="site-search" placeholder="Filter topics…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <div class="chapter-layout">
+<aside class="toc-aside" aria-label="On this page"><h2>On this page</h2>
+<ol>
+  <li><a href="#why">Why this matters</a></li>
+  <li><a href="#goals">Learning goals</a></li>
+  <li><a href="#sediments">Types of sediments</a></li>
+  <li><a href="#porosity">Porosity</a></li>
+  <li><a href="#inter">Intergranular porosity</a></li>
+  <li><a href="#other-por">Other types of porosity</a></li>
+  <li><a href="#analysis">Formation analysis</a></li>
+  <li><a href="#shaly">Shaly formations</a></li>
+  <li><a href="#reserves">Reserves estimate</a></li>
+  <li><a href="#invasion">Invasion</a></li>
+  <li><a href="#zones">Invasion zones</a></li>
+  <li><a href="#resistivity">Resistivity</a></li>
+  <li><a href="#direct">Direct vs. indirect measurements</a></li>
+  <li><a href="#sw">Water saturation</a></li>
+  <li><a href="#key-terms">Key terms</a></li>
+</ol>
+</aside>
+<main class="chapter-main">
+
+<h1>Formation Parameters</h1>
+<p class="why-matters" id="why">A resistivity curve is not oil. This chapter is the rock-and-fluid model the curve is standing in for: grains, pores, shale, invasion, and the Archie step from resistance to water saturation.</p>
+
+<section class="learning-goals" id="goals">
+  <h2>Learning goals</h2>
+  <ul>
+    <li>Separate clastic, evaporite, and organic (carbonate) sediments, and say why sandstones and carbonates matter as reservoirs.</li>
+    <li>Define porosity, then intergranular, fracture, and vugular porosity, and why sorting and grain shape change the number.</li>
+    <li>Split a unit volume into matrix, water, and hydrocarbon, and into total versus effective porosity when shale is present.</li>
+    <li>Sketch invasion: mud cake, flushed zone, invaded zone, virgin zone, and residual hydrocarbon.</li>
+    <li>Use formation factor and Archie’s square-root relation to go from resistivity to water saturation.</li>
+  </ul>
+</section>
+
+<p>Before a curve can be interpreted you need the setting: what reservoir rocks are, how they form, what fills them, how oil and gas sit in the pores, what a direct measurement is versus an indirect one, and resistivity—one of the oldest measurements still on the log.</p>
+
+<h2 id="sediments">Types of sediments</h2>
+<p>Oil and gas sit in sedimentary rock. Those sediments were laid down in layers on the floors of rivers, lakes, and oceans. The notes group them three ways: clastics, evaporites, and organics.</p>
+<p><strong>Clastics</strong> come from Greek <em>klastos</em>, “broken.” They are pieces of older rock. Sandstone is the usual example: grains weathered, moved by wind and water, buried, then cemented by chemistry, heat, and pressure. Sands are the most important reservoir rock. Most hydrocarbon accumulations are in them.</p>
+<p>Grain size sorts the clastics. Sand runs from beach sand down to grains you can barely see. Conglomerate has large grains, from rice-sized pebbles to rocks bigger than a fist, and it is poorly sorted—many sizes mixed. Shale has microscopic grains and also contains clay minerals.</p>
+<p><strong>Evaporites</strong> drop out as salty water dries. The common ones are gypsum, anhydrite, and halite (rock salt). Halite matters to explorers because many fields, especially on the Gulf Coast, are tied to salt domes.</p>
+<p><strong>Organic sediments</strong> here are mostly carbonates: limestone and dolomite. They show up as very fine limestone mud (micrite), chalk from algae, and reef limestone from coral—usually the skeletons of small marine animals that sank, piled into beds often hundreds of feet thick, then were buried, compacted, and cemented. Carbonate beds are important reservoirs too.</p>
+<p>Every sedimentary rock holds some water between the grains. That is <strong>formation water</strong>, with whatever salt is dissolved in it. It may be the water the sediment was deposited in, or later rain and groundwater, as in sand dunes.</p>
+<p>In a sandstone the grains are cemented by carbonate, silica, or both. Because they were laid down in water or later submerged, they are normally <strong>water-wet</strong>: a film of water clings to each grain. That film is <strong>irreducible</strong> water. No matter how much oil or gas the rock holds, that film stays.</p>
+<figure class="figure">
+  <img src="img/logging/fig-05.png" alt="Sand grains labeled quartz, feldspar, limestone, chert, and clay, with pore spaces and a film of formation water on the grains" loading="lazy">
+  <figcaption>A water-wet sand. Quartz and other grains do not fill the volume. The gaps are pores, and formation water wets the grain surfaces.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="porosity">Porosity</h2>
+<p>Grains do not pack into a solid. The spaces between them are pores. <strong>Porosity</strong> is those voids as a percent of the whole rock volume. Oil, gas, and water sit in the voids. More porosity means more fluid. With none, there is nowhere for hydrocarbons to collect, and an explorer walks away.</p>
+
+<h3 id="inter">Intergranular porosity</h3>
+<p>Intergranular porosity is the empty space between grains. Identical spheres stacked in a simple cubic pile leave about <strong>47%</strong> pore space. That is the upper limit for a sandstone, and the packing is unstable. A reading above about 47% is not a sand. Sphere size does not change the percent if the arrangement stays the same.</p>
+<p>Stack the same spheres like cannonballs and porosity falls to about <strong>26%</strong>. That packing is stable, and it is the practical maximum for a well-sorted, compacted sandstone.</p>
+<p>Mix the sizes and the small grains fill the gaps, so porosity drops. Poorly sorted sands are tight. Angular grains pack tighter than rounded ones. Rounding runs angular, subangular, subrounded, well rounded.</p>
+<p>Well-rounded, well-sorted sand (mature, or beach sand) has high porosity and high permeability, so fluid moves and production is higher. Angular, poorly sorted sand (immature) has low porosity and low permeability.</p>
+<figure class="figure">
+  <img src="img/logging/fig-06.png" alt="Four packing sketches: cubic marbles with pores, a cannonball stack, mixed large and small grains, and bricks with cracks between them" loading="lazy">
+  <figcaption>Packing sets porosity. (a) Simple stack of equal spheres, pores between the marbles. (b) Cannonball, or rhombohedral, packing. (c) Small grains filling the gaps between large ones. (d) Brick-like cracks, the picture used for fracture porosity.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h3 id="other-por">Other types of porosity</h3>
+<p><strong>Fracture porosity</strong> is the space along cracks, like loosely stacked bricks. The pore volume is usually only 1–2%, but permeability is often very high, so a lot of fluid can move.</p>
+<p><strong>Vugular porosity</strong> is common in limestones and dolomites. A vug is a large irregular hole, often where a mineral such as calcite was dissolved by moving water. Caverns are huge vugs. Fluid moves through them easily.</p>
+<p>A formation can have one of these systems or all three. Sandstones normally have only <strong>matrix</strong> (intergranular) porosity. Carbonates often have matrix, fractures, and vugs together.</p>
+
+<h2 id="analysis">Formation analysis</h2>
+<p>Take a cube of rock and call it 100%. Solid mineral is the <strong>matrix</strong> (mostly quartz in a sand). Everything else is porosity, and the pores are always full: water, oil, or gas.</p>
+<p>Water wets the grains first. That film is irreducible water. How much depends on grain size, permeability, and capillary pressure. Extra water can flow with the oil or gas. Oil and gas sit in the pores, kept off the grains by that water film.</p>
+<p>Stack the cube: matrix at the bottom, then water, then oil.</p>
+<div class="eq">
+  <p>BVM + BVW + BVO = 100%</p>
+  <p>Example: matrix 70%, water 10%, oil 20%. Porosity is water plus oil, here 30%.</p>
+  <p>φ = BVW + BVO = 100% − BVM</p>
+  <p>Saturation is the share of the <em>pore space</em>, not of the whole rock:</p>
+  <p>S<sub>w</sub> = BVW / φ &nbsp;&nbsp; S<sub>o</sub> = BVO / φ</p>
+  <p>S<sub>w</sub> + S<sub>o</sub> = 100%. With free gas, S<sub>o</sub> + S<sub>g</sub> + S<sub>w</sub> = 100%.</p>
+</div>
+<figure class="figure">
+  <img src="img/logging/fig-07.png" alt="Unit-volume cube of sand grains beside a stacked bar of matrix, water, and oil, with porosity and saturation formulas" loading="lazy">
+  <figcaption>One unit volume. Bulk volume of matrix, water, and oil adds to 100%. Porosity is the fluid part of that cube. S<sub>w</sub> and S<sub>o</sub> are fractions of the porosity, not of the whole rock.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="shaly">Shaly formations</h2>
+<p>So far the rock was clean, with no shale. Real formations often contain shale, and that complicates the cube.</p>
+<p>Shales and clays—used almost interchangeably here, though they differ technically—are very fine, plate-like minerals. For the same volume they have a huge surface compared with sand grains, so they bind a lot of water. Fine grains and strong capillary forces hold that water in place. Shales have essentially zero permeability and, usually, high porosity. Shale may sit in thin laminations or be scattered through the sand. Scattered shale acts almost like another “fluid” in the pores: it cuts the porosity available for movable fluids, and it cuts permeability.</p>
+<p><strong>Effective porosity</strong> is the pore space that can hold movable fluids. <strong>Total porosity</strong> also includes the shale pores, which are full of bound water.</p>
+<p>In the revised cube, shale matrix joins the sand matrix (similar minerals, much finer grains), and shale porosity joins the porosity column. Effective porosity is total porosity minus the shale bound-water volume. Effective water saturation is formation-water volume divided by effective porosity.</p>
+<figure class="figure">
+  <img src="img/logging/fig-08.png" alt="Shaly unit-volume cube stacked as sand matrix, shale matrix, bound water, formation water, and hydrocarbon, with total and effective porosity formulas" loading="lazy">
+  <figcaption>Shale splits the cube. Total porosity φ<sub>t</sub> includes bound water in the shale. Effective porosity φ<sub>e</sub> is only formation water plus hydrocarbon. S<sub>we</sub> uses φ<sub>e</sub>; S<sub>wt</sub> uses φ<sub>t</sub>.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<p>Recap:</p>
+<ul>
+  <li><strong>Unit volume</strong>: a cube of formation, one unit on a side.</li>
+  <li><strong>Total porosity</strong>: the percent of that cube filled by water, oil, or gas.</li>
+  <li><strong>Effective porosity</strong>: that percent minus shale bound water.</li>
+  <li><strong>Total water saturation</strong> S<sub>wt</sub>: formation water divided by total porosity.</li>
+  <li><strong>Effective water saturation</strong> S<sub>we</sub>: formation water divided by effective porosity.</li>
+</ul>
+
+<h2 id="reserves">Reserves estimate</h2>
+<p>Oil or gas in place needs effective porosity, oil saturation, thickness, and the area the well can drain. Recoverable reserves also need a <strong>recovery factor</strong>. For oil the notes often use about 40%, but the real factor can be much higher or lower.</p>
+<div class="eq">
+  <p>N<sub>p</sub> = φ<sub>e</sub> × S<sub>o</sub> × h × A × r<sub>f</sub></p>
+</div>
+<p>You recover more if porosity is higher, oil saturation is higher (water saturation lower), the formation is thicker, the drainage area is larger, or the recovery factor is higher.</p>
+<p>Recovery factor and drainage area are estimates—spacing, seismic, lease size, or a guess, and a best case and worst case for recovery. Porosity, oil saturation, and thickness come from the logs. With a reserve number you can run the economics and see if the well pays out.</p>
+
+<h2 id="invasion">Invasion</h2>
+<p>Before drilling, the reservoir is undisturbed. The bit changes the rock a little. The mud changes it a lot.</p>
+<p>Mud is water, suspended solids, and chemicals. It carries cuttings and, weighted with barite, keeps wellbore pressure above formation pressure so the well does not kick. If pressure is still too high, the driller weights up.</p>
+<p>Press the mud and it splits. <strong>Filtrate</strong> is the clear liquid, usually fresher than formation water. It enters permeable rock and pushes the original fluids deeper. <strong>Mud cake</strong> is the solids left on the borehole wall. It seals the rock and stops further invasion. Cake means the rock is permeable. Whole mud stays out unless the rock is fractured or vuggy. If mud pressure breaks the rock, you get lost circulation.</p>
+<p>In an undisturbed sand, the bottom is 100% water, the top is oil plus only irreducible water, and a transition sits between them. Oil rises because it is lighter.</p>
+<p>After drilling, filtrate flushes near the wellbore. In the wet zone the flush is nearly complete: water replaced by water of a different salinity. If the salinities match, you cannot see the invasion. In the oil zone most of the water is displaced, but some oil stays. That leftover is <strong>residual oil</strong> S<sub>or</sub>. Residual gas is S<sub>gr</sub>. Either is residual hydrocarbon S<sub>hr</sub>. A rock that never held oil or gas has S<sub>hr</sub> = 0. Once it has—even if the hydrocarbons only passed through—S<sub>hr</sub> &gt; 0. Residual oil, like irreducible water, does not move by ordinary means.</p>
+<figure class="figure">
+  <img src="img/logging/fig-09.png" alt="Undisturbed sand with irreducible water over a wet zone, beside the invaded borehole with mud cake, filtrate, flushed, invaded, and virgin zones" loading="lazy">
+  <figcaption>Left: undisturbed sand, 100% water at the base and irreducible water in the oil at the top. Right: after drilling, mud cake on a washed-out hole, filtrate in the flushed and invaded zones, and undisturbed rock beyond.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<h2 id="zones">Invasion zones</h2>
+<p>Moving out from the hole:</p>
+<ul>
+  <li>The <strong>flushed zone</strong> is where filtrate has pushed out everything it can. Saturation S<sub>xo</sub>, diameter d<sub>xo</sub>, filtrate resistivity R<sub>mf</sub>, and rock resistivity R<sub>xo</sub>.</li>
+  <li>The <strong>invaded zone</strong> is a mix of formation fluid and filtrate out to the end of the filtrate. Diameter d<sub>i</sub>, saturation S<sub>i</sub>. Water resistivity R<sub>i</sub> is a mix, so it usually has no single value.</li>
+  <li>The <strong>virgin zone</strong> is past the invaded zone, undisturbed. Its resistivity is R<sub>t</sub> and its water saturation is S<sub>w</sub>.</li>
+</ul>
+<p>With depth, the sand in the notes goes from 100% water at the bottom, through a transition, to irreducible water at the top, about 25%. Hydrocarbon saturation is S<sub>h</sub> = 1 − S<sub>w</sub>.</p>
+<p>With distance from the hole:</p>
+<ul>
+  <li>In the wet zone, S<sub>xo</sub> = S<sub>i</sub> = S<sub>w</sub> = 100%. There was never oil or gas.</li>
+  <li>In the transition, residual oil makes S<sub>xo</sub> less than 100%, and S<sub>i</sub> less than S<sub>xo</sub>. Far away, S<sub>w</sub> might be about 40%.</li>
+  <li>At irreducible water, the contrast is largest. 1 − S<sub>xo</sub> is close to residual oil. Saturation changes between d<sub>xo</sub> and d<sub>i</sub>. Beyond d<sub>i</sub>, S<sub>w</sub> is back to irreducible.</li>
+</ul>
+<p>Many bad interpretations come from not knowing how far the filtrate went.</p>
+
+<h2 id="resistivity">Resistivity</h2>
+<p>Reserves need (1) porosity, (2) the fraction of pore fluid that is hydrocarbon (S<sub>o</sub> or S<sub>g</sub>), (3) thickness h, (4) recovery factor, and (5) reservoir area. Thickness is easy from logs. Area comes from seismic and offset wells. Recovery factor can only be estimated at first. Logs tell you whether hydrocarbons are there. Years of production tell you the ultimate recovery. Log evaluation measures the three things it can—porosity, water saturation, and thickness—then infers production potential. Those quantities are measured <strong>indirectly</strong>, never directly.</p>
+
+<h3 id="direct">Direct vs. indirect measurements</h3>
+<p>A butcher does not keep a pile of pounds in the back. He sets the meat on a scale and watches a spring stretch. The stretch is proportional to weight. If the scale is calibrated, he reads pounds or grams. He weighed the meat indirectly. Engineering is the same. Direct measurement is rarely practical down the hole.</p>
+
+<h3 id="sw">Water saturation</h3>
+<p>You cannot measure porosity or oil saturation directly in the hole. Early logs could measure only resistivity. Archie (and Doll) showed how to turn that into water saturation. Oil saturation is what is left: S<sub>o</sub> = 1 − S<sub>w</sub>.</p>
+<p><strong>Resistivity</strong> is how hard it is to push current through a material, in ohm-meters. Conductivity is the opposite. Copper is low, glass is near infinity, and formations sit in between.</p>
+<p>Dry sandstone is basically glass, so it reads near infinity. On logs, sands often read below 1 ohm-m because of salty formation water. Distilled water is also nearly infinite. Dissolved salt is what conducts.</p>
+<p>Soak a dry core in salt water of resistivity R<sub>w</sub>. The 100% water-filled rock reads R<sub>o</sub>. Their ratio is the <strong>formation factor</strong>:</p>
+<div class="eq">
+  <p>F<sub>r</sub> = R<sub>o</sub> / R<sub>w</sub> = K<sub>R</sub> / φ<sup>m</sup></p>
+  <p>K<sub>R</sub> is about 0.8 to 1, and m is about 1.3 to 2.5. F depends on porosity, because porosity sets how much water the rock holds.</p>
+</div>
+<p>Replace some of that water with oil and resistivity rises. That reading is true resistivity R<sub>t</sub>, and R<sub>t</sub> &gt; R<sub>o</sub>. The notes write Archie’s result as:</p>
+<div class="eq">
+  <p>S<sub>w</sub> = √(R<sub>o</sub> / R<sub>t</sub>) = (F × R<sub>w</sub> / R<sub>t</sub>)<sup>1/2</sup></p>
+</div>
+<p>Near the borehole, flushed-zone resistivity R<sub>xo</sub> is high, a bit higher where residual oil remains. Farther out, the gap between R<sub>xo</sub> and R<sub>t</sub> is large in a wet zone, smaller in the transition, and small where water is already irreducible. R<sub>xo</sub> is usually higher than R<sub>t</sub>, unless the mud is very salty or S<sub>w</sub> is very low. Because invasion depth is unknown, resistivity tools read at several depths.</p>
+<figure class="figure">
+  <img src="img/logging/fig-10.png" alt="Three resistor sketches of dry sand, salt-water sand, and sand with salt water and oil, plus a table of Rw, Ro, Sw, and Rt" loading="lazy">
+  <figcaption>Resistivity is an indirect meter. Dry sand reads very high. Sand full of salt water reads R<sub>o</sub>. The same sand with oil reads a higher R<sub>t</sub>. The table is the formation-factor and square-root saturation arithmetic: F<sub>r</sub> = R<sub>o</sub> / R<sub>w</sub> and S<sub>w</sub> = √(R<sub>o</sub> / R<sub>t</sub>).
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+<figure class="figure">
+  <img src="img/logging/fig-11.png" alt="Water saturation versus depth beside three resistivity profiles from the borehole out to Rt, for a wet zone, a transition, and irreducible water" loading="lazy">
+  <figcaption>Left: S<sub>w</sub> from 100% in the wet sand up to about 25% irreducible. Right: R<sub>xo</sub> near the hole and R<sub>t</sub> in the virgin zone, for a wet zone (1), a transition (2), and irreducible water (3). The table under the curves lists S<sub>xo</sub>, S<sub>w</sub>, R<sub>xo</sub>, and R<sub>t</sub> for those three cases.
+    <span class="src">Course study figures (well-logging notes / Google Doc diagrams).</span>
+  </figcaption>
+</figure>
+
+<aside class="callout callout-witsml" role="note">
+  <p class="label">Data engineer / WITSML</p>
+  <ul>
+    <li>φ, S<sub>w</sub>, and R<sub>t</sub> are different curves. Do not store saturation in the resistivity channel.</li>
+    <li>R<sub>mf</sub>, R<sub>w</sub>, and mud weight come from the header or a fluid sample, not from the depth index.</li>
+    <li>Name the zone you mean: R<sub>xo</sub> (flushed), a shallow or medium reading through the invaded zone, and R<sub>t</sub> (virgin). A single “resistivity” column is ambiguous.</li>
+    <li>Effective porosity φ<sub>e</sub> and total porosity φ<sub>t</sub> are not interchangeable once shale is in the model.</li>
+  </ul>
+</aside>
+
+<section class="key-terms" id="key-terms">
+  <h2>Key terms</h2>
+  <dl>
+    <dt>Porosity φ</dt><dd>Pore volume as a percent of the rock.</dd>
+    <dt>Irreducible water</dt><dd>The water film that stays on water-wet grains.</dd>
+    <dt>S<sub>w</sub>, S<sub>o</sub></dt><dd>Water and oil as fractions of the pore space.</dd>
+    <dt>φ<sub>e</sub> vs φ<sub>t</sub></dt><dd>Movable-fluid porosity versus porosity that also counts shale-bound water.</dd>
+    <dt>Filtrate / mud cake</dt><dd>Liquid that invades permeable rock, and the solids left on the wall.</dd>
+    <dt>S<sub>xo</sub>, R<sub>xo</sub></dt><dd>Saturation and resistivity in the flushed zone.</dd>
+    <dt>R<sub>t</sub>, R<sub>w</sub>, R<sub>o</sub></dt><dd>True resistivity, formation-water resistivity, and resistivity of the rock at 100% water.</dd>
+    <dt>Formation factor</dt><dd>F = R<sub>o</sub> / R<sub>w</sub>, set by porosity.</dd>
+  </dl>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation"><a class="prev" href="logging-ch02.html"><span class="label">Previous</span>Ch 2 · Reading Logs</a></nav>
+  </main>
+</div>
+  <footer class="site-footer"><p>Study notes for personal learning, rewritten from the reader’s notes on Well Logging in Nontechnical Language. Figures are the course-doc diagrams. Not a substitute for the book.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
