@@ -3,34 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Study Guides</title>
+  <title>Héctor Oviedo Study Guide</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="site-brand" href="index.html">Study Guides</a>
-      <nav aria-label="Books">
-        <a href="index.html">Books</a>
-        <a href="hyne.html">General</a>
-        <a href="logging.html">Well Logging</a>
-      </nav>
+      <a class="site-brand" href="index.html">Héctor Oviedo Study Guide</a>
       <div class="search-wrap">
         <label for="site-search">Search</label>
         <input type="search" id="site-search" placeholder="Filter books…" autocomplete="off">
       </div>
     </div>
-  </header>
+  <nav class="book-nav" aria-label="Books">
+        <a href="hyne.html" data-book="hyne">Hyne</a>
+        <a href="logging.html" data-book="logging">Well Logging</a>
+  </nav>
+</header>
   <main class="hub">
     <div class="hub-hero">
       <p class="eyebrow">Personal study notes · pick a book</p>
-      <h1>Study Guides</h1>
+      <h1>Héctor Oviedo Study Guide</h1>
       <p class="lede">English study notes from course docs. Choose a book. Each book has its own contents page; chapter addresses stay put when a book grows.</p>
     </div>
     <section class="howto">
       <h2>How to use</h2>
       <ol>
-        <li>Pick a book below. General / Intro is the Hyne guide. Well Logging is the second book.</li>
+        <li>Pick a book in the header or below. Hyne is the general intro. Well Logging is the second book.</li>
         <li>On a book page, open a chapter card or use that book’s header.</li>
         <li>Search filters these book cards. Inside a chapter it filters headings.</li>
         <li>Adding another book later is a new entry in <code>books.js</code> plus a book home page—not a special case inside one chapter.</li>

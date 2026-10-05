@@ -39,6 +39,13 @@
     }
   });
 
+  var currentBook = document.body.getAttribute("data-book");
+  if (currentBook) {
+    document.querySelectorAll(".book-nav a[data-book]").forEach(function (a) {
+      if (a.getAttribute("data-book") === currentBook) a.classList.add("active");
+    });
+  }
+
   // Sticky TOC highlight on chapter pages
   var tocLinks = document.querySelectorAll(".toc-aside a[href^='#']");
   if (tocLinks.length && "IntersectionObserver" in window) {

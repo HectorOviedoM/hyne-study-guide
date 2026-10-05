@@ -4,9 +4,9 @@
 window.STUDY_BOOKS = [
   {
     id: "hyne",
-    kicker: "General / Intro",
-    title: "General / Intro",
-    source: "Hyne, Nontechnical Guide (3rd ed.)",
+    kicker: "Hyne",
+    title: "Hyne",
+    source: "General / Intro · Nontechnical Guide (3rd ed.)",
     href: "hyne.html",
     blurb: "Petroleum systems, drilling, completion, offshore, and production. The original Hyne chapter pages stay at the same URLs."
   },

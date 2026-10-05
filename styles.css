@@ -90,6 +90,31 @@ a:hover { color: var(--teal-dark); }
   border-bottom: 2px solid var(--amber);
 }
 
+.site-header .book-nav,
+.site-header .chapter-bar {
+  max-width: 1200px;
+  margin: 0.45rem auto 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(255,255,255,0.16);
+}
+.site-header .book-nav {
+  font-size: 0.95rem;
+  gap: 0.5rem 1.25rem;
+}
+.site-header .book-nav a {
+  font-weight: 700;
+}
+.site-header .chapter-bar {
+  font-size: 0.75rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.35rem 0.9rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.site-header .chapter-bar a { white-space: nowrap; }
+.site-brand { font-size: 1.05rem; }
+
 .search-wrap {
   display: flex;
   align-items: center;
@@ -236,9 +261,9 @@ a:hover { color: var(--teal-dark); }
 
 .toc-aside {
   position: sticky;
-  top: 3.4rem;
+  top: 8.75rem;
   align-self: start;
-  max-height: calc(100vh - 3.4rem);
+  max-height: calc(100vh - 8.75rem);
   overflow-y: auto;
   padding: 1.25rem 1rem 2rem 1.25rem;
   border-right: 1px solid var(--border);
@@ -320,7 +345,7 @@ a:hover { color: var(--teal-dark); }
   padding-bottom: 0.35rem;
   border-bottom: 2px solid var(--border);
   color: var(--teal-dark);
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 9.5rem;
 }
 .chapter-main h2.hidden-heading { display: none; }
 
@@ -328,7 +353,7 @@ a:hover { color: var(--teal-dark); }
   font-size: 1.12rem;
   margin: 1.5rem 0 0.5rem;
   color: var(--ink);
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 9.5rem;
 }
 .chapter-main h3.hidden-heading { display: none; }
 
